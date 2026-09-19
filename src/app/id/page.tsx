@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { eventFacts, venuePhotos } from "@/content/event";
+import { eventFacts, heroImage, venuePhotos } from "@/content/event";
 import { faqItems } from "@/content/faq";
 import { buildMetadata } from "@/lib/metadata";
 
@@ -23,43 +23,52 @@ export default function IdHomePage() {
   return (
     <main className="flex flex-1 flex-col bg-ivory text-navy">
       {/* 1. Hero: 행사명, 주제, 날짜, 장소, 주 행동 버튼 */}
-      <section className="relative isolate flex min-h-[85vh] flex-col items-center justify-end overflow-hidden px-6 pb-16 pt-24 text-center text-ivory sm:px-10">
+      <section className="relative isolate flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-24 text-center text-ivory sm:px-10">
         <Image
-          src={venuePhotos[2].src}
-          alt={venuePhotos[2].alt.id}
+          src={heroImage.src}
+          alt={heroImage.alt.id}
           fill
           priority
           sizes="100vw"
-          className="-z-10 object-cover"
+          className="-z-20 object-cover"
         />
-        <div className="absolute inset-0 -z-10 bg-navy-deep/55" />
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold sm:text-sm">
+        <div className="absolute inset-0 -z-10 bg-linear-to-t from-navy-deep/85 via-navy-deep/25 to-navy-deep/40" />
+
+        <p className="hero-text-shadow rounded-full border border-gold/50 bg-navy-deep/30 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-gold sm:text-sm">
           {eventFacts.name}
         </p>
-        <h1 className="mt-4 max-w-3xl text-3xl font-bold leading-tight sm:text-5xl">
+
+        <h1 className="hero-text-shadow mt-6 max-w-4xl text-4xl font-extrabold leading-tight sm:text-6xl lg:text-7xl">
           {eventFacts.theme.id}
         </h1>
-        <p className="mt-2 max-w-xl text-sm italic text-ivory/80 sm:text-base">
+        <p className="hero-text-shadow mt-3 max-w-2xl text-base italic text-ivory/90 sm:text-xl">
           {eventFacts.theme.en}
         </p>
-        <dl className="mt-8 flex flex-col gap-2 text-sm sm:flex-row sm:gap-8 sm:text-base">
+
+        <dl className="hero-text-shadow mt-10 flex flex-col gap-2 text-base font-medium sm:flex-row sm:gap-8 sm:text-lg">
           <div>
             <dt className="sr-only">Tanggal</dt>
             <dd>{eventFacts.dates.id}</dd>
+          </div>
+          <div className="hidden text-gold sm:block" aria-hidden="true">
+            ·
           </div>
           <div>
             <dt className="sr-only">Lokasi</dt>
             <dd>{eventFacts.venue.id}</dd>
           </div>
         </dl>
-        <div className="mt-8 flex flex-col items-center gap-2">
+
+        <div className="mt-10 flex flex-col items-center gap-3">
           <Link
             href="/id/registration"
-            className="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-navy-deep transition-colors hover:bg-gold/90 sm:text-base"
+            className="rounded-full bg-gold px-10 py-4 text-base font-bold text-navy-deep shadow-lg shadow-navy-deep/40 transition-colors hover:bg-gold/90 sm:text-lg"
           >
             Daftar Sekarang
           </Link>
-          <p className="text-xs text-ivory/70">Pendaftaran segera dibuka</p>
+          <p className="hero-text-shadow text-xs text-ivory/80 sm:text-sm">
+            Pendaftaran segera dibuka
+          </p>
         </div>
       </section>
 

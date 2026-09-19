@@ -23,6 +23,14 @@ export const eventFacts = {
   contactEmail: "info@cgikorea.kr",
 } as const;
 
+export const heroImage = {
+  src: "/images/hero/awakening-crowd.png",
+  alt: {
+    id: "Jemaat mengangkat tangan dalam penyembahan, diterangi cahaya keemasan",
+    en: "A congregation with hands raised in worship, lit by golden light",
+  },
+} as const;
+
 export const venuePhotos = [
   {
     src: "/images/venue/osanri-01.jpg",
