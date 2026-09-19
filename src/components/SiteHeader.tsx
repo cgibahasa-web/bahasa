@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navItems } from "@/content/nav";
@@ -9,6 +10,12 @@ export function SiteHeader({ locale }: { locale: "id" | "en" }) {
   const pathname = usePathname();
   const otherLocale = locale === "id" ? "en" : "id";
   const altPath = pathname.replace(/^\/(id|en)/, `/${otherLocale}`);
+
+  // The root <html> tag is shared by every route, so it can't set the
+  // correct lang per-locale on its own — sync it here instead.
+  useEffect(() => {
+    document.documentElement.lang = locale;
+  }, [locale]);
 
   return (
     <header className="sticky top-0 z-20 border-b border-navy/10 bg-ivory/95 backdrop-blur">
