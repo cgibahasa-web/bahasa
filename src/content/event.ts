@@ -92,19 +92,19 @@ export const feeInclusions = [
 ] as const;
 
 export const heroImage = {
-  src: "/images/hero/awakening-crowd.png",
+  src: "/images/hero/awakening-crowd-2.png",
   alt: {
-    id: "Jemaat mengangkat tangan dalam penyembahan, diterangi cahaya keemasan",
-    en: "A congregation with hands raised in worship, lit by golden light",
+    id: "Jemaat mengenakan batik mengangkat tangan dalam penyembahan di dalam ruang ibadah, diterangi cahaya keemasan",
+    en: "A congregation in batik attire with hands raised in worship inside the hall, lit by golden light",
   },
 } as const;
 
 export const venuePhotos = [
   {
-    src: "/images/venue/osanri-01.jpg",
+    src: "/images/venue/osanri-prayer-cave.jpg",
     alt: {
-      id: "Jemaat berdoa bersama di ruang ibadah utama Osanri Prayer Mountain",
-      en: "Congregation praying together in the main worship hall at Osanri Prayer Mountain",
+      id: "Bagian dalam salah satu bilik Gua Doa (기도굴) untuk doa pribadi di Osanri Prayer Mountain",
+      en: "Inside one of the individual Prayer Cave (기도굴) rooms used for personal prayer at Osanri Prayer Mountain",
     },
   },
   {
