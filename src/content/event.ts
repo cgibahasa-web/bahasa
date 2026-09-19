@@ -92,10 +92,10 @@ export const feeInclusions = [
 ] as const;
 
 export const heroImage = {
-  src: "/images/hero/awakening-crowd-2.png",
+  src: "/images/hero/awakening-crowd.png",
   alt: {
-    id: "Jemaat mengenakan batik mengangkat tangan dalam penyembahan di dalam ruang ibadah, diterangi cahaya keemasan",
-    en: "A congregation in batik attire with hands raised in worship inside the hall, lit by golden light",
+    id: "Jemaat mengangkat tangan dalam penyembahan, diterangi cahaya keemasan",
+    en: "A congregation with hands raised in worship, lit by golden light",
   },
 } as const;
 
