@@ -1,0 +1,30 @@
+# Cloudflare Workers config for the @opennextjs/cloudflare adapter.
+# See https://opennext.js.org/cloudflare
+
+name = "bahasa"
+main = ".open-next/worker.js"
+compatibility_date = "2026-09-19"
+compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+# Self-reference service binding, required by the OpenNext Cloudflare cache.
+# The service name must match `name` above.
+# https://opennext.js.org/cloudflare/caching
+[[services]]
+binding = "WORKER_SELF_REFERENCE"
+service = "bahasa"
+
+# R2 bucket used for the incremental cache (ISR/data cache).
+# Create it before deploying: `wrangler r2 bucket create bahasa-opennext-cache`
+# https://opennext.js.org/cloudflare/caching
+[[r2_buckets]]
+binding = "NEXT_INC_CACHE_R2_BUCKET"
+bucket_name = "bahasa-opennext-cache"
+
+# Cloudflare Images binding, used for next/image optimization.
+# https://opennext.js.org/cloudflare/howtos/image
+[images]
+binding = "IMAGES"
