@@ -1,4 +1,12 @@
 import { eventFacts } from "@/content/event";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata = buildMetadata({
+  locale: "id",
+  path: "/about",
+  title: "Tentang Konferensi",
+  description: `Tujuan, penyelenggara, dan peserta yang dituju ${eventFacts.name}.`,
+});
 
 export default function IdAboutPage() {
   return (

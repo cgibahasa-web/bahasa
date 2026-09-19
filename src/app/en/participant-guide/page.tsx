@@ -1,4 +1,12 @@
 import { eventFacts } from "@/content/event";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata = buildMetadata({
+  locale: "en",
+  path: "/participant-guide",
+  title: "Participant Guide",
+  description: `Registration fee, what to bring, meals, and transportation for ${eventFacts.name}.`,
+});
 
 export default function EnParticipantGuidePage() {
   return (

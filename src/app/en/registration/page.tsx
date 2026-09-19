@@ -1,4 +1,12 @@
 import { eventFacts } from "@/content/event";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata = buildMetadata({
+  locale: "en",
+  path: "/registration",
+  title: "Registration",
+  description: `Registration status for ${eventFacts.name}.`,
+});
 
 export default function EnRegistrationPage() {
   return (

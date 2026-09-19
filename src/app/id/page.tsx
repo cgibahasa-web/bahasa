@@ -2,6 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { eventFacts, venuePhotos } from "@/content/event";
 import { faqItems } from "@/content/faq";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata = buildMetadata({
+  locale: "id",
+  path: "",
+  title: `${eventFacts.name} — ${eventFacts.theme.id}`,
+  description: `${eventFacts.dates.id} di ${eventFacts.venue.id}. Situs resmi ${eventFacts.name}.`,
+  absoluteTitle: true,
+});
 
 const programDays = [
   { label: "Hari 1", date: "11 Oktober" },
@@ -111,7 +120,7 @@ export default function IdHomePage() {
           {venuePhotos.map((photo) => (
             <div
               key={photo.src}
-              className="relative aspect-[4/3] overflow-hidden rounded-xl"
+              className="relative aspect-4/3 overflow-hidden rounded-xl"
             >
               <Image
                 src={photo.src}

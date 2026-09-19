@@ -1,4 +1,12 @@
 import { eventFacts } from "@/content/event";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata = buildMetadata({
+  locale: "en",
+  path: "/travel-visa",
+  title: "Travel & Visa",
+  description: `Invitation letter, document, and visa guidance for overseas participants of ${eventFacts.name}.`,
+});
 
 export default function EnTravelVisaPage() {
   return (

@@ -1,4 +1,12 @@
 import { eventFacts } from "@/content/event";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata = buildMetadata({
+  locale: "en",
+  path: "/program",
+  title: "Program",
+  description: `Daily schedule for ${eventFacts.name}, ${eventFacts.dates.en}.`,
+});
 
 const programDays = [
   { label: "Day 1", date: "Monday, 11 October 2027" },

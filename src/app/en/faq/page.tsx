@@ -1,5 +1,13 @@
 import { eventFacts } from "@/content/event";
 import { faqItems } from "@/content/faq";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata = buildMetadata({
+  locale: "en",
+  path: "/faq",
+  title: "FAQ",
+  description: `Frequently asked questions about ${eventFacts.name}.`,
+});
 
 export default function EnFaqPage() {
   return (

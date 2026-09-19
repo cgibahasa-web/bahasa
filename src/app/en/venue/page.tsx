@@ -1,5 +1,13 @@
 import Image from "next/image";
 import { eventFacts, venuePhotos } from "@/content/event";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata = buildMetadata({
+  locale: "en",
+  path: "/venue",
+  title: "Venue",
+  description: `Facilities, accommodation, and directions to ${eventFacts.venue.en}.`,
+});
 
 export default function EnVenuePage() {
   return (
@@ -19,7 +27,7 @@ export default function EnVenuePage() {
           {venuePhotos.map((photo) => (
             <div
               key={photo.src}
-              className="relative aspect-[4/3] overflow-hidden rounded-xl"
+              className="relative aspect-4/3 overflow-hidden rounded-xl"
             >
               <Image
                 src={photo.src}

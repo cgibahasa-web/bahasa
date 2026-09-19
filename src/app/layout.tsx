@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { siteUrl } from "@/lib/metadata";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,7 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "2027 CGI BAHASA Conference",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "2027 CGI BAHASA Conference",
+    template: "%s — 2027 CGI BAHASA Conference",
+  },
   description: "2027 CGI BAHASA Conference official website",
 };
 

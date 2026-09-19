@@ -1,5 +1,13 @@
 import { eventFacts } from "@/content/event";
 import { faqItems } from "@/content/faq";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata = buildMetadata({
+  locale: "id",
+  path: "/faq",
+  title: "FAQ",
+  description: `Pertanyaan yang sering diajukan seputar ${eventFacts.name}.`,
+});
 
 export default function IdFaqPage() {
   return (

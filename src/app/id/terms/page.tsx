@@ -1,4 +1,12 @@
 import { eventFacts } from "@/content/event";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata = buildMetadata({
+  locale: "id",
+  path: "/terms",
+  title: "Syarat & Ketentuan",
+  description: `Syarat dan ketentuan penggunaan situs ${eventFacts.name}.`,
+});
 
 export default function IdTermsPage() {
   return (

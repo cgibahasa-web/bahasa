@@ -1,4 +1,12 @@
 import { eventFacts } from "@/content/event";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata = buildMetadata({
+  locale: "en",
+  path: "/about",
+  title: "About",
+  description: `Purpose, host, and target audience of ${eventFacts.name}.`,
+});
 
 export default function EnAboutPage() {
   return (

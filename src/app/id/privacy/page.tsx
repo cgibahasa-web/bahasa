@@ -1,4 +1,12 @@
 import { eventFacts } from "@/content/event";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata = buildMetadata({
+  locale: "id",
+  path: "/privacy",
+  title: "Kebijakan Privasi",
+  description: `Kebijakan privasi situs ${eventFacts.name}.`,
+});
 
 export default function IdPrivacyPage() {
   return (

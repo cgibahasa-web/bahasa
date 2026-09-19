@@ -1,4 +1,12 @@
 import { eventFacts } from "@/content/event";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata = buildMetadata({
+  locale: "en",
+  path: "/terms",
+  title: "Terms & Conditions",
+  description: `Terms and conditions for using the ${eventFacts.name} website.`,
+});
 
 export default function EnTermsPage() {
   return (

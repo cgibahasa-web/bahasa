@@ -1,4 +1,12 @@
 import { eventFacts } from "@/content/event";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata = buildMetadata({
+  locale: "en",
+  path: "/privacy",
+  title: "Privacy Policy",
+  description: `Privacy policy for the ${eventFacts.name} website.`,
+});
 
 export default function EnPrivacyPage() {
   return (
