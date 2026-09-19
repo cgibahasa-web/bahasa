@@ -1,4 +1,5 @@
 import { eventFacts } from "@/content/event";
+import { programNotes, programSchedule } from "@/content/program";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
@@ -7,13 +8,6 @@ export const metadata = buildMetadata({
   title: "Program",
   description: `Jadwal harian ${eventFacts.name}, ${eventFacts.dates.id}.`,
 });
-
-const programDays = [
-  { label: "Hari 1", date: "Senin, 11 Oktober 2027" },
-  { label: "Hari 2", date: "Selasa, 12 Oktober 2027" },
-  { label: "Hari 3", date: "Rabu, 13 Oktober 2027" },
-  { label: "Hari 4", date: "Kamis, 14 Oktober 2027" },
-];
 
 export default function IdProgramPage() {
   return (
@@ -29,44 +23,45 @@ export default function IdProgramPage() {
       </section>
 
       <section className="mx-auto w-full max-w-3xl px-6 py-14 sm:px-10">
-        <p className="text-sm text-navy/60 sm:text-base">
-          [Jadwal lengkap seminar, kebaktian, dan program pilihan akan segera
-          dilengkapi. Susunan di bawah ini masih sementara.]
-        </p>
-
-        <ol className="mt-8 space-y-6">
-          {programDays.map((day) => (
+        <ol className="space-y-6">
+          {programSchedule.map((day, index) => (
             <li
-              key={day.label}
+              key={day.dateId}
               className="rounded-xl border border-navy/10 bg-white px-6 py-6"
             >
               <p className="text-xs font-semibold uppercase tracking-wide text-gold">
-                {day.label}
+                Hari {index + 1}
               </p>
               <p className="mt-1 text-base font-semibold sm:text-lg">
-                {day.date}
+                {day.dateId}
               </p>
+              {day.noteId && (
+                <p className="mt-1 text-xs font-medium text-brand-red">
+                  {day.noteId}
+                </p>
+              )}
               <dl className="mt-4 space-y-2 text-sm text-navy/70 sm:text-base">
-                <div className="flex justify-between gap-4">
-                  <dt>Sesi pagi</dt>
-                  <dd>[Segera diumumkan]</dd>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <dt>Sesi siang</dt>
-                  <dd>[Segera diumumkan]</dd>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <dt>Kebaktian malam</dt>
-                  <dd>[Segera diumumkan]</dd>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <dt>Program pilihan</dt>
-                  <dd>[Segera diumumkan]</dd>
-                </div>
+                {day.items.map((item) => (
+                  <div
+                    key={item.time}
+                    className="flex justify-between gap-4 border-b border-navy/5 pb-2 last:border-0 last:pb-0"
+                  >
+                    <dt className="shrink-0 font-mono text-xs text-navy/50 sm:text-sm">
+                      {item.time}
+                    </dt>
+                    <dd className="text-right">{item.id}</dd>
+                  </div>
+                ))}
               </dl>
             </li>
           ))}
         </ol>
+
+        <ul className="mt-8 space-y-2 text-xs text-navy/60 sm:text-sm">
+          {programNotes.id.map((note) => (
+            <li key={note}>※ {note}</li>
+          ))}
+        </ul>
       </section>
     </main>
   );

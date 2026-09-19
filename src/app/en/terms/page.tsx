@@ -36,9 +36,9 @@ export default function EnTermsPage() {
           </h2>
           <p className="mt-2">
             Registration and payment for this conference are not yet open.
-            Official registration terms — including deadlines, payment
-            methods, and cancellation policy — will be published once
-            registration opens.
+            The registration deadline is{" "}
+            {eventFacts.registrationDeadline.en}. {eventFacts.earlyBird.en}{" "}
+            Payment methods will be announced once registration opens.
           </p>
         </div>
 
@@ -46,10 +46,7 @@ export default function EnTermsPage() {
           <h2 className="text-lg font-semibold text-navy">
             3. Refund Policy
           </h2>
-          <p className="mt-2">
-            [The refund policy will be added before registration and payment
-            open.]
-          </p>
+          <p className="mt-2">{eventFacts.refundPolicy.en}</p>
         </div>
 
         <div>

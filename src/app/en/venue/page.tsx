@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { eventFacts, venuePhotos } from "@/content/event";
+import { eventFacts, feeInclusions, venuePhotos } from "@/content/event";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
@@ -55,8 +55,7 @@ export default function EnVenuePage() {
         <div className="mx-auto max-w-3xl">
           <h2 className="text-lg font-semibold sm:text-xl">Accommodation</h2>
           <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
-            [Information about room types and lodging facilities will be
-            added soon.]
+            {feeInclusions[0].en}. [Room type details will be added soon.]
           </p>
         </div>
       </section>
@@ -66,8 +65,8 @@ export default function EnVenuePage() {
           Getting There
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
-          [Directions from the airport/station and a map link will be added
-          soon.]
+          {eventFacts.transportInfo.en} [A detailed map link and directions
+          will be added soon.]
         </p>
       </section>
 

@@ -1,4 +1,4 @@
-import { eventFacts } from "@/content/event";
+import { eventFacts, feeInclusions } from "@/content/event";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
@@ -28,6 +28,12 @@ export default function IdParticipantGuidePage() {
           <p className="mt-3 text-3xl font-bold text-brand-red sm:text-4xl">
             {eventFacts.fee.amount}
           </p>
+          <p className="mt-4 text-sm text-navy/70 sm:text-base">
+            Batas pendaftaran: {eventFacts.registrationDeadline.id}
+          </p>
+          <p className="mt-1 text-sm text-navy/60">
+            {eventFacts.earlyBird.id}
+          </p>
         </div>
       </section>
 
@@ -36,10 +42,11 @@ export default function IdParticipantGuidePage() {
           <h2 className="text-lg font-semibold sm:text-xl">
             Termasuk dalam Biaya
           </h2>
-          <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
-            [Rincian item yang termasuk dan tidak termasuk dalam biaya
-            pendaftaran akan segera dilengkapi.]
-          </p>
+          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-navy/70 sm:text-base">
+            {feeInclusions.map((item) => (
+              <li key={item.id}>{item.id}</li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -54,8 +61,7 @@ export default function IdParticipantGuidePage() {
         <div className="mx-auto max-w-2xl">
           <h2 className="text-lg font-semibold sm:text-xl">Makanan</h2>
           <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
-            [Informasi jadwal dan jenis makanan yang disediakan akan segera
-            dilengkapi.]
+            {feeInclusions[1].id}
           </p>
         </div>
       </section>
@@ -63,8 +69,7 @@ export default function IdParticipantGuidePage() {
       <section className="mx-auto w-full max-w-2xl px-6 py-14 sm:px-10">
         <h2 className="text-lg font-semibold sm:text-xl">Transportasi</h2>
         <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
-          [Informasi transportasi menuju dan selama acara akan segera
-          dilengkapi.]
+          {eventFacts.transportInfo.id}
         </p>
       </section>
     </main>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { eventFacts, venuePhotos } from "@/content/event";
+import { eventFacts, feeInclusions, venuePhotos } from "@/content/event";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
@@ -46,8 +46,10 @@ export default function IdVenuePage() {
           Tentang {eventFacts.venue.id}
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
-          [Deskripsi lokasi dan fasilitas Osanri Prayer Mountain akan segera
-          dilengkapi.]
+          Osanri Prayer Mountain adalah pusat doa puasa yang dikenal dengan
+          Gua Doa (기도굴) untuk doa pribadi dan Bukit Elia (엘리야고지) yang
+          dapat dikunjungi peserta pada waktu istirahat. [Deskripsi lokasi dan
+          fasilitas lengkap akan segera dilengkapi.]
         </p>
       </section>
 
@@ -55,7 +57,7 @@ export default function IdVenuePage() {
         <div className="mx-auto max-w-3xl">
           <h2 className="text-lg font-semibold sm:text-xl">Akomodasi</h2>
           <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
-            [Informasi jenis kamar dan fasilitas penginapan akan segera
+            {feeInclusions[0].id}. [Rincian jenis kamar akan segera
             dilengkapi.]
           </p>
         </div>
@@ -64,8 +66,8 @@ export default function IdVenuePage() {
       <section className="mx-auto w-full max-w-3xl px-6 py-14 sm:px-10">
         <h2 className="text-lg font-semibold sm:text-xl">Cara Menuju Lokasi</h2>
         <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
-          [Petunjuk transportasi dari bandara/stasiun dan tautan peta akan
-          segera dilengkapi.]
+          {eventFacts.transportInfo.id} [Tautan peta dan petunjuk arah rinci
+          akan segera dilengkapi.]
         </p>
       </section>
 

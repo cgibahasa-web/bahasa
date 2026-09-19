@@ -23,8 +23,7 @@ export default function EnAboutPage() {
       <section className="mx-auto w-full max-w-3xl px-6 py-14 sm:px-10">
         <h2 className="text-lg font-semibold sm:text-xl">Purpose</h2>
         <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
-          [A description of the conference&apos;s purpose and background will
-          be added soon.]
+          {eventFacts.purpose.en}
         </p>
       </section>
 

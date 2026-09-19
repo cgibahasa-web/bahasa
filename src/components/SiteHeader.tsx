@@ -22,7 +22,7 @@ export function SiteHeader({ locale }: { locale: "id" | "en" }) {
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-3 px-6 py-4 sm:px-10">
         <Link
           href={`/${locale}`}
-          className="text-sm font-semibold tracking-wide text-navy"
+          className="text-lg font-extrabold tracking-tight text-navy sm:text-xl"
         >
           {eventFacts.name}
         </Link>

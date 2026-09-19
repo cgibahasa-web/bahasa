@@ -30,7 +30,7 @@ export default function EnFaqPage() {
             >
               <p className="text-sm font-medium sm:text-base">{item.en}</p>
               <p className="mt-1 text-sm text-navy/60">
-                [Answer to be added soon]
+                {item.answer ? item.answer.en : "[Answer to be added soon]"}
               </p>
             </li>
           ))}

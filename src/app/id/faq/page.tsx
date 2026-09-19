@@ -30,7 +30,7 @@ export default function IdFaqPage() {
             >
               <p className="text-sm font-medium sm:text-base">{item.id}</p>
               <p className="mt-1 text-sm text-navy/60">
-                [Jawaban akan segera dilengkapi]
+                {item.answer ? item.answer.id : "[Jawaban akan segera dilengkapi]"}
               </p>
             </li>
           ))}

@@ -16,8 +16,12 @@ export default function IdRegistrationPage() {
         Pendaftaran segera dibuka
       </h1>
       <p className="max-w-md text-sm text-navy/70 sm:text-base">
-        Biaya pendaftaran: {eventFacts.fee.amount}. Hubungi kami untuk
-        pertanyaan seputar pendaftaran.
+        Biaya pendaftaran: {eventFacts.fee.amount}. Batas pendaftaran:{" "}
+        {eventFacts.registrationDeadline.id}.
+      </p>
+      <p className="max-w-md text-xs text-navy/60">{eventFacts.earlyBird.id}</p>
+      <p className="max-w-md text-sm text-navy/70 sm:text-base">
+        Hubungi kami untuk pertanyaan seputar pendaftaran.
       </p>
       <a
         href={`mailto:${eventFacts.contactEmail}`}

@@ -36,9 +36,10 @@ export default function IdTermsPage() {
           </h2>
           <p className="mt-2">
             Pendaftaran dan pembayaran untuk konferensi ini belum dibuka.
-            Syarat dan ketentuan pendaftaran resmi — termasuk batas waktu,
-            metode pembayaran, dan kebijakan pembatalan — akan diterbitkan
-            saat pendaftaran dibuka.
+            Batas akhir pendaftaran adalah {eventFacts.registrationDeadline.id}.
+            {" "}
+            {eventFacts.earlyBird.id} Metode pembayaran akan diumumkan saat
+            pendaftaran dibuka.
           </p>
         </div>
 
@@ -46,10 +47,7 @@ export default function IdTermsPage() {
           <h2 className="text-lg font-semibold text-navy">
             3. Kebijakan Pengembalian Dana
           </h2>
-          <p className="mt-2">
-            [Kebijakan pengembalian dana akan dilengkapi sebelum pendaftaran
-            dan pembayaran dibuka.]
-          </p>
+          <p className="mt-2">{eventFacts.refundPolicy.id}</p>
         </div>
 
         <div>

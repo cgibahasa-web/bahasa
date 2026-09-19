@@ -1,4 +1,4 @@
-import { eventFacts } from "@/content/event";
+import { eventFacts, feeInclusions } from "@/content/event";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
@@ -28,6 +28,10 @@ export default function EnParticipantGuidePage() {
           <p className="mt-3 text-3xl font-bold text-brand-red sm:text-4xl">
             {eventFacts.fee.amount}
           </p>
+          <p className="mt-4 text-sm text-navy/70 sm:text-base">
+            Registration deadline: {eventFacts.registrationDeadline.en}
+          </p>
+          <p className="mt-1 text-sm text-navy/60">{eventFacts.earlyBird.en}</p>
         </div>
       </section>
 
@@ -36,10 +40,11 @@ export default function EnParticipantGuidePage() {
           <h2 className="text-lg font-semibold sm:text-xl">
             What&apos;s Included
           </h2>
-          <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
-            [Details of what is and isn&apos;t included in the registration
-            fee will be added soon.]
-          </p>
+          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-navy/70 sm:text-base">
+            {feeInclusions.map((item) => (
+              <li key={item.en}>{item.en}</li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -54,7 +59,7 @@ export default function EnParticipantGuidePage() {
         <div className="mx-auto max-w-2xl">
           <h2 className="text-lg font-semibold sm:text-xl">Meals</h2>
           <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
-            [Meal schedule and menu information will be added soon.]
+            {feeInclusions[1].en}
           </p>
         </div>
       </section>
@@ -62,8 +67,7 @@ export default function EnParticipantGuidePage() {
       <section className="mx-auto w-full max-w-2xl px-6 py-14 sm:px-10">
         <h2 className="text-lg font-semibold sm:text-xl">Transportation</h2>
         <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
-          [Transportation information to and during the event will be added
-          soon.]
+          {eventFacts.transportInfo.en}
         </p>
       </section>
     </main>

@@ -23,8 +23,7 @@ export default function IdAboutPage() {
       <section className="mx-auto w-full max-w-3xl px-6 py-14 sm:px-10">
         <h2 className="text-lg font-semibold sm:text-xl">Tujuan Konferensi</h2>
         <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
-          [Deskripsi tujuan dan latar belakang konferensi akan segera
-          dilengkapi.]
+          {eventFacts.purpose.id}
         </p>
       </section>
 

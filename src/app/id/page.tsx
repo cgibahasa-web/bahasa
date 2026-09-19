@@ -13,10 +13,10 @@ export const metadata = buildMetadata({
 });
 
 const programDays = [
-  { label: "Hari 1", date: "11 Oktober" },
-  { label: "Hari 2", date: "12 Oktober" },
-  { label: "Hari 3", date: "13 Oktober" },
-  { label: "Hari 4", date: "14 Oktober" },
+  { label: "Hari 1", date: "11 Oktober", highlight: "Ibadah Pembukaan" },
+  { label: "Hari 2", date: "12 Oktober", highlight: "Seminar & KKR I" },
+  { label: "Hari 3", date: "13 Oktober", highlight: "Seminar & KKR II" },
+  { label: "Hari 4", date: "14 Oktober", highlight: "Kesaksian & Kepulangan" },
 ];
 
 export default function IdHomePage() {
@@ -39,7 +39,9 @@ export default function IdHomePage() {
         </p>
 
         <h1 className="hero-text-shadow mt-6 max-w-4xl text-4xl font-extrabold leading-tight sm:text-6xl lg:text-7xl">
-          {eventFacts.theme.id}
+          {eventFacts.themeLines.id[0]}
+          <br />
+          {eventFacts.themeLines.id[1]}
         </h1>
         <p className="hero-text-shadow mt-3 max-w-2xl text-base italic text-ivory/90 sm:text-xl">
           {eventFacts.theme.en}
@@ -78,8 +80,7 @@ export default function IdHomePage() {
           Tentang Konferensi
         </h2>
         <p className="mt-4 text-sm leading-relaxed text-navy/70 sm:text-base">
-          [Deskripsi tujuan dan latar belakang konferensi akan segera
-          dilengkapi.]
+          {eventFacts.purpose.id}
         </p>
         <p className="mt-6 text-sm font-medium sm:text-base">
           {eventFacts.audience.id}
@@ -105,7 +106,7 @@ export default function IdHomePage() {
                   {day.label}
                 </p>
                 <p className="mt-1 text-sm">{day.date}</p>
-                <p className="mt-2 text-xs text-ivory/60">Segera diumumkan</p>
+                <p className="mt-2 text-xs text-ivory/60">{day.highlight}</p>
               </li>
             ))}
           </ul>
@@ -166,8 +167,7 @@ export default function IdHomePage() {
             Persiapan untuk Peserta Luar Negeri
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-navy/70 sm:text-base">
-            [Informasi visa, undangan, dan perjalanan untuk peserta dari luar
-            negeri akan segera dilengkapi.]
+            {eventFacts.transportInfo.id}
           </p>
         </div>
       </section>
@@ -186,7 +186,7 @@ export default function IdHomePage() {
               >
                 <p className="text-sm font-medium sm:text-base">{item.id}</p>
                 <p className="mt-1 text-sm text-navy/60">
-                  [Jawaban akan segera dilengkapi]
+                  {item.answer ? item.answer.id : "[Jawaban akan segera dilengkapi]"}
                 </p>
               </li>
             ))}

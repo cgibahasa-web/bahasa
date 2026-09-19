@@ -16,8 +16,12 @@ export default function EnRegistrationPage() {
         Registration opening soon
       </h1>
       <p className="max-w-md text-sm text-navy/70 sm:text-base">
-        Registration fee: {eventFacts.fee.amount}. Contact us with any
-        registration questions.
+        Registration fee: {eventFacts.fee.amount}. Deadline:{" "}
+        {eventFacts.registrationDeadline.en}.
+      </p>
+      <p className="max-w-md text-xs text-navy/60">{eventFacts.earlyBird.en}</p>
+      <p className="max-w-md text-sm text-navy/70 sm:text-base">
+        Contact us with any registration questions.
       </p>
       <a
         href={`mailto:${eventFacts.contactEmail}`}

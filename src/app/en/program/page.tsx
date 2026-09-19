@@ -1,4 +1,5 @@
 import { eventFacts } from "@/content/event";
+import { programNotes, programSchedule } from "@/content/program";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
@@ -7,13 +8,6 @@ export const metadata = buildMetadata({
   title: "Program",
   description: `Daily schedule for ${eventFacts.name}, ${eventFacts.dates.en}.`,
 });
-
-const programDays = [
-  { label: "Day 1", date: "Monday, 11 October 2027" },
-  { label: "Day 2", date: "Tuesday, 12 October 2027" },
-  { label: "Day 3", date: "Wednesday, 13 October 2027" },
-  { label: "Day 4", date: "Thursday, 14 October 2027" },
-];
 
 export default function EnProgramPage() {
   return (
@@ -29,44 +23,45 @@ export default function EnProgramPage() {
       </section>
 
       <section className="mx-auto w-full max-w-3xl px-6 py-14 sm:px-10">
-        <p className="text-sm text-navy/60 sm:text-base">
-          [The full seminar, worship, and elective program schedule will be
-          added soon. The outline below is provisional.]
-        </p>
-
-        <ol className="mt-8 space-y-6">
-          {programDays.map((day) => (
+        <ol className="space-y-6">
+          {programSchedule.map((day, index) => (
             <li
-              key={day.label}
+              key={day.dateEn}
               className="rounded-xl border border-navy/10 bg-white px-6 py-6"
             >
               <p className="text-xs font-semibold uppercase tracking-wide text-gold">
-                {day.label}
+                Day {index + 1}
               </p>
               <p className="mt-1 text-base font-semibold sm:text-lg">
-                {day.date}
+                {day.dateEn}
               </p>
+              {day.noteEn && (
+                <p className="mt-1 text-xs font-medium text-brand-red">
+                  {day.noteEn}
+                </p>
+              )}
               <dl className="mt-4 space-y-2 text-sm text-navy/70 sm:text-base">
-                <div className="flex justify-between gap-4">
-                  <dt>Morning session</dt>
-                  <dd>[To be announced]</dd>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <dt>Afternoon session</dt>
-                  <dd>[To be announced]</dd>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <dt>Evening service</dt>
-                  <dd>[To be announced]</dd>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <dt>Elective program</dt>
-                  <dd>[To be announced]</dd>
-                </div>
+                {day.items.map((item) => (
+                  <div
+                    key={item.time}
+                    className="flex justify-between gap-4 border-b border-navy/5 pb-2 last:border-0 last:pb-0"
+                  >
+                    <dt className="shrink-0 font-mono text-xs text-navy/50 sm:text-sm">
+                      {item.timeEn}
+                    </dt>
+                    <dd className="text-right">{item.en}</dd>
+                  </div>
+                ))}
               </dl>
             </li>
           ))}
         </ol>
+
+        <ul className="mt-8 space-y-2 text-xs text-navy/60 sm:text-sm">
+          {programNotes.en.map((note) => (
+            <li key={note}>※ {note}</li>
+          ))}
+        </ul>
       </section>
     </main>
   );

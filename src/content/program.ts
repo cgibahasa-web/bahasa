@@ -1,0 +1,172 @@
+// Translated from the official schedule: "[2027 CGI Bahasa] 일정표" (2026.09.08)
+export const programSchedule = [
+  {
+    dateId: "Senin, 11 Oktober 2027",
+    dateEn: "Monday, 11 October 2027",
+    noteId: null,
+    noteEn: null,
+    items: [
+      {
+        time: "Sepanjang hari",
+        timeEn: "All day",
+        id: "Kedatangan & pendaftaran",
+        en: "Arrival & registration",
+      },
+      { time: "17:00–18:30", timeEn: "17:00–18:30", id: "Makan malam", en: "Dinner" },
+      { time: "18:30–19:10", timeEn: "18:30–19:10", id: "Pujian", en: "Worship" },
+      {
+        time: "19:10–20:30",
+        timeEn: "19:10–20:30",
+        id: "Ibadah Pembukaan",
+        en: "Opening Service",
+      },
+    ],
+  },
+  {
+    dateId: "Selasa, 12 Oktober 2027",
+    dateEn: "Tuesday, 12 October 2027",
+    noteId: "Puasa sepanjang hari",
+    noteEn: "Full-day fast",
+    items: [
+      { time: "06:00–06:30", timeEn: "06:00–06:30", id: "Pujian", en: "Worship" },
+      { time: "06:30–07:30", timeEn: "06:30–07:30", id: "Doa Subuh", en: "Dawn Prayer" },
+      {
+        time: "07:30–09:00",
+        timeEn: "07:30–09:00",
+        id: "Doa pribadi (Gua Doa) & istirahat",
+        en: "Personal prayer (Prayer Cave) & rest",
+      },
+      { time: "09:00–09:30", timeEn: "09:00–09:30", id: "Pujian", en: "Worship" },
+      { time: "09:30–10:30", timeEn: "09:30–10:30", id: "Seminar 1", en: "Seminar 1" },
+      {
+        time: "10:30–11:00",
+        timeEn: "10:30–11:00",
+        id: "Doa pribadi (Gua Doa) & istirahat",
+        en: "Personal prayer (Prayer Cave) & rest",
+      },
+      { time: "11:00–11:30", timeEn: "11:00–11:30", id: "Pujian", en: "Worship" },
+      { time: "11:30–12:30", timeEn: "11:30–12:30", id: "Seminar 2", en: "Seminar 2" },
+      {
+        time: "12:30–14:00",
+        timeEn: "12:30–14:00",
+        id: "Istirahat & doa pribadi",
+        en: "Rest & personal prayer",
+      },
+      { time: "14:00–14:30", timeEn: "14:00–14:30", id: "Pujian", en: "Worship" },
+      {
+        time: "14:30–15:30",
+        timeEn: "14:30–15:30",
+        id: "Seminar 3 / Program 1",
+        en: "Seminar 3 / Program 1",
+      },
+      {
+        time: "15:30–17:00",
+        timeEn: "15:30–17:00",
+        id: "Doa pribadi (Bukit Elia) & istirahat",
+        en: "Personal prayer (Elijah's Hill) & rest",
+      },
+      { time: "17:00–18:30", timeEn: "17:00–18:30", id: "Makan malam", en: "Dinner" },
+      { time: "18:30–19:10", timeEn: "18:30–19:10", id: "Pujian", en: "Worship" },
+      {
+        time: "19:10–20:30",
+        timeEn: "19:10–20:30",
+        id: "Kebaktian Kebangunan Rohani (KKR) I",
+        en: "Holy Spirit Revival Service (KKR) I",
+      },
+    ],
+  },
+  {
+    dateId: "Rabu, 13 Oktober 2027",
+    dateEn: "Wednesday, 13 October 2027",
+    noteId: "Makan siang menu pemulihan puasa",
+    noteEn: "Lunch is a post-fast recovery meal",
+    items: [
+      { time: "06:00–06:30", timeEn: "06:00–06:30", id: "Pujian", en: "Worship" },
+      { time: "06:30–07:30", timeEn: "06:30–07:30", id: "Doa Subuh", en: "Dawn Prayer" },
+      {
+        time: "07:30–09:00",
+        timeEn: "07:30–09:00",
+        id: "Doa pribadi (Gua Doa) & istirahat",
+        en: "Personal prayer (Prayer Cave) & rest",
+      },
+      { time: "09:00–09:30", timeEn: "09:00–09:30", id: "Pujian", en: "Worship" },
+      { time: "09:30–10:30", timeEn: "09:30–10:30", id: "Seminar 4", en: "Seminar 4" },
+      {
+        time: "10:30–11:00",
+        timeEn: "10:30–11:00",
+        id: "Doa pribadi (Gua Doa) & istirahat",
+        en: "Personal prayer (Prayer Cave) & rest",
+      },
+      { time: "11:00–11:30", timeEn: "11:00–11:30", id: "Pujian", en: "Worship" },
+      {
+        time: "11:30–12:30",
+        timeEn: "11:30–12:30",
+        id: "Seminar 5 (oleh Gembala Senior)",
+        en: "Seminar 5 (by Senior Pastor)",
+      },
+      {
+        time: "12:30–14:00",
+        timeEn: "12:30–14:00",
+        id: "Makan siang (menu pemulihan) / Makan Siang VIP",
+        en: "Lunch (recovery menu) / VIP Luncheon",
+      },
+      { time: "14:00–14:30", timeEn: "14:00–14:30", id: "Pujian", en: "Worship" },
+      {
+        time: "14:30–15:30",
+        timeEn: "14:30–15:30",
+        id: "Seminar 6 / Program 2",
+        en: "Seminar 6 / Program 2",
+      },
+      {
+        time: "15:30–17:00",
+        timeEn: "15:30–17:00",
+        id: "Doa pribadi (Bukit Elia) & istirahat",
+        en: "Personal prayer (Elijah's Hill) & rest",
+      },
+      { time: "17:00–18:30", timeEn: "17:00–18:30", id: "Makan malam", en: "Dinner" },
+      { time: "18:30–19:10", timeEn: "18:30–19:10", id: "Pujian", en: "Worship" },
+      {
+        time: "19:10–20:30",
+        timeEn: "19:10–20:30",
+        id: "Kebaktian Kebangunan Rohani (KKR) II",
+        en: "Holy Spirit Revival Service (KKR) II",
+      },
+    ],
+  },
+  {
+    dateId: "Kamis, 14 Oktober 2027",
+    dateEn: "Thursday, 14 October 2027",
+    noteId: null,
+    noteEn: null,
+    items: [
+      { time: "06:00–06:30", timeEn: "06:00–06:30", id: "Pujian", en: "Worship" },
+      { time: "06:30–07:30", timeEn: "06:30–07:30", id: "Doa Subuh", en: "Dawn Prayer" },
+      { time: "07:30–09:00", timeEn: "07:30–09:00", id: "Sarapan", en: "Breakfast" },
+      {
+        time: "09:00–10:30",
+        timeEn: "09:00–10:30",
+        id: "Waktu Kesaksian & Berbagi",
+        en: "Testimony & Sharing Time",
+      },
+      {
+        time: "Setelah 10:30",
+        timeEn: "After 10:30",
+        id: "Turun gunung & kepulangan",
+        en: "Descending the mountain & departure",
+      },
+    ],
+  },
+] as const;
+
+export const programNotes = {
+  id: [
+    "Selasa (12/10) adalah hari puasa penuh; makan siang Rabu (13/10) adalah menu pemulihan puasa.",
+    "Waktu istirahat & doa pribadi memanfaatkan Gua Doa dan kunjungan ke Bukit Elia.",
+    "Program 1 & 2 memerlukan pendaftaran sebelumnya — waktu berbagi budaya Korea serta program pembinaan (O'Sarang, Mother's Dream, Sekolah Alkitab, dll.).",
+  ],
+  en: [
+    "Tuesday (12 Oct) is a full-day fast; Wednesday's (13 Oct) lunch is a post-fast recovery meal.",
+    "Rest & personal prayer time makes use of the Prayer Cave and visits to Elijah's Hill.",
+    "Programs 1 & 2 require advance registration — time to share Korean culture and discipleship programs (O'Sarang, Mother's Dream, Bible School, etc.).",
+  ],
+} as const;

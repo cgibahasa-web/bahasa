@@ -3,6 +3,6 @@ export const navItems = [
   { slug: "program", id: "Program", en: "Program" },
   { slug: "venue", id: "Lokasi", en: "Venue" },
   { slug: "participant-guide", id: "Panduan Peserta", en: "Participant Guide" },
-  { slug: "travel-visa", id: "Perjalanan & Visa", en: "Travel & Visa" },
+  { slug: "travel-visa", id: "Perjalanan", en: "Travel" },
   { slug: "faq", id: "FAQ", en: "FAQ" },
 ] as const;

@@ -13,10 +13,14 @@ export const metadata = buildMetadata({
 });
 
 const programDays = [
-  { label: "Day 1", date: "11 October" },
-  { label: "Day 2", date: "12 October" },
-  { label: "Day 3", date: "13 October" },
-  { label: "Day 4", date: "14 October" },
+  { label: "Day 1", date: "11 October", highlight: "Opening Service" },
+  { label: "Day 2", date: "12 October", highlight: "Seminars & KKR I" },
+  { label: "Day 3", date: "13 October", highlight: "Seminars & KKR II" },
+  {
+    label: "Day 4",
+    date: "14 October",
+    highlight: "Testimony & Departure",
+  },
 ];
 
 export default function EnHomePage() {
@@ -39,7 +43,9 @@ export default function EnHomePage() {
         </p>
 
         <h1 className="hero-text-shadow mt-6 max-w-4xl text-4xl font-extrabold leading-tight sm:text-6xl lg:text-7xl">
-          {eventFacts.theme.en}
+          {eventFacts.themeLines.en[0]}
+          <br />
+          {eventFacts.themeLines.en[1]}
         </h1>
         <p className="hero-text-shadow mt-3 max-w-2xl text-base italic text-ivory/90 sm:text-xl">
           {eventFacts.theme.id}
@@ -78,8 +84,7 @@ export default function EnHomePage() {
           About the Conference
         </h2>
         <p className="mt-4 text-sm leading-relaxed text-navy/70 sm:text-base">
-          [A description of the conference&apos;s purpose and background will
-          be added soon.]
+          {eventFacts.purpose.en}
         </p>
         <p className="mt-6 text-sm font-medium sm:text-base">
           {eventFacts.audience.en}
@@ -106,7 +111,7 @@ export default function EnHomePage() {
                 </p>
                 <p className="mt-1 text-sm">{day.date}</p>
                 <p className="mt-2 text-xs text-ivory/60">
-                  To be announced
+                  {day.highlight}
                 </p>
               </li>
             ))}
@@ -168,8 +173,7 @@ export default function EnHomePage() {
             Preparing as an Overseas Participant
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-navy/70 sm:text-base">
-            [Visa, invitation letter, and travel information for overseas
-            participants will be added soon.]
+            {eventFacts.transportInfo.en}
           </p>
         </div>
       </section>
@@ -188,7 +192,7 @@ export default function EnHomePage() {
               >
                 <p className="text-sm font-medium sm:text-base">{item.en}</p>
                 <p className="mt-1 text-sm text-navy/60">
-                  [Answer to be added soon]
+                  {item.answer ? item.answer.en : "[Answer to be added soon]"}
                 </p>
               </li>
             ))}
