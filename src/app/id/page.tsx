@@ -1,18 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { eventFacts, venuePhotos } from "@/content/event";
+import { faqItems } from "@/content/faq";
 
 const programDays = [
   { label: "Hari 1", date: "11 Oktober" },
   { label: "Hari 2", date: "12 Oktober" },
   { label: "Hari 3", date: "13 Oktober" },
   { label: "Hari 4", date: "14 Oktober" },
-];
-
-const faqItems = [
-  "Apa saja yang perlu dibawa peserta?",
-  "Bagaimana cara menuju lokasi acara?",
-  "Apakah tersedia penerjemah bahasa Indonesia?",
 ];
 
 export default function IdHomePage() {
@@ -166,12 +161,12 @@ export default function IdHomePage() {
             Pertanyaan yang Sering Diajukan
           </h2>
           <ul className="mt-8 space-y-4">
-            {faqItems.map((question) => (
+            {faqItems.slice(0, 3).map((item) => (
               <li
-                key={question}
+                key={item.id}
                 className="rounded-lg border border-navy/10 bg-white px-5 py-4"
               >
-                <p className="text-sm font-medium sm:text-base">{question}</p>
+                <p className="text-sm font-medium sm:text-base">{item.id}</p>
                 <p className="mt-1 text-sm text-navy/60">
                   [Jawaban akan segera dilengkapi]
                 </p>
