@@ -1,16 +1,28 @@
 import Link from "next/link";
-import { eventFacts } from "@/content/event";
+import { eventFacts, organizer } from "@/content/event";
 
 const footerCopy = {
   id: {
     rights: "Hak cipta dilindungi.",
     privacy: "Kebijakan Privasi",
     terms: "Syarat & Ketentuan",
+    refund: "Kebijakan Pengembalian Dana",
+    organizer: "Penyelenggara",
+    director: "Direktur",
+    registration: "No. Registrasi",
+    address: "Alamat",
+    contact: "Kontak",
   },
   en: {
     rights: "All rights reserved.",
     privacy: "Privacy Policy",
     terms: "Terms & Conditions",
+    refund: "Refund Policy",
+    organizer: "Organizer",
+    director: "Director",
+    registration: "Registration No.",
+    address: "Address",
+    contact: "Contact",
   },
 } as const;
 
@@ -19,15 +31,39 @@ export function SiteFooter({ locale }: { locale: "id" | "en" }) {
   return (
     <footer className="border-t border-navy/10 bg-navy-deep px-6 py-10 text-center text-xs text-ivory/60 sm:px-10">
       <p className="font-medium text-ivory/80">{eventFacts.name}</p>
-      <p className="mt-1">
-        <a
-          href={`mailto:${eventFacts.contactEmail}`}
+
+      <div className="mx-auto mt-4 max-w-md space-y-1">
+        <p>
+          {t.organizer}: {organizer.legalName.ko} / {organizer.legalName.en}
+        </p>
+        <p>
+          {t.director}: {organizer.representative.ko} (
+          {organizer.representative.en})
+        </p>
+        <p>
+          {t.registration}: {organizer.registrationNumber}
+        </p>
+        <p>
+          {t.address}: {organizer.address.ko}, Republic of Korea
+        </p>
+        <p>
+          {t.contact}:{" "}
+          <a
+            href={`mailto:${organizer.email}`}
+            className="underline underline-offset-4"
+          >
+            {organizer.email}
+          </a>
+        </p>
+      </div>
+
+      <div className="mt-4 flex flex-wrap justify-center gap-4">
+        <Link
+          href={`/${locale}/terms`}
           className="underline underline-offset-4"
         >
-          {eventFacts.contactEmail}
-        </a>
-      </p>
-      <div className="mt-4 flex justify-center gap-4">
+          {t.terms}
+        </Link>
         <Link
           href={`/${locale}/privacy`}
           className="underline underline-offset-4"
@@ -35,13 +71,13 @@ export function SiteFooter({ locale }: { locale: "id" | "en" }) {
           {t.privacy}
         </Link>
         <Link
-          href={`/${locale}/terms`}
+          href={`/${locale}/refund`}
           className="underline underline-offset-4"
         >
-          {t.terms}
+          {t.refund}
         </Link>
       </div>
-      <p className="mt-4">© 2027 CGI. {t.rights}</p>
+      <p className="mt-4">© 2027 CGI BAHASA Conference. {t.rights}</p>
     </footer>
   );
 }

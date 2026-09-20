@@ -78,16 +78,16 @@ export const programSchedule = [
   {
     dateId: "Rabu, 13 Oktober 2027",
     dateEn: "Wednesday, 13 October 2027",
-    noteId: "Makan siang menu pemulihan puasa",
-    noteEn: "Lunch is a post-fast recovery meal",
+    noteId: "Sarapan boho-sik (menu pemulihan setelah puasa)",
+    noteEn: "Breakfast boho-sik (post-fast recovery meal)",
     items: [
       { time: "06:00–06:30", timeEn: "06:00–06:30", id: "Pujian", en: "Worship" },
       { time: "06:30–07:30", timeEn: "06:30–07:30", id: "Doa Subuh", en: "Dawn Prayer" },
       {
         time: "07:30–09:00",
         timeEn: "07:30–09:00",
-        id: "Doa pribadi (Gua Doa) & istirahat",
-        en: "Personal prayer (Prayer Cave) & rest",
+        id: "Sarapan (menu pemulihan puasa) & doa pribadi (Gua Doa)",
+        en: "Breakfast (post-fast recovery meal) & personal prayer (Prayer Cave)",
       },
       { time: "09:00–09:30", timeEn: "09:00–09:30", id: "Pujian", en: "Worship" },
       { time: "09:30–10:30", timeEn: "09:30–10:30", id: "Seminar 4", en: "Seminar 4" },
@@ -107,8 +107,8 @@ export const programSchedule = [
       {
         time: "12:30–14:00",
         timeEn: "12:30–14:00",
-        id: "Makan siang (menu pemulihan) / Makan Siang VIP",
-        en: "Lunch (recovery menu) / VIP Luncheon",
+        id: "Makan Siang VIP",
+        en: "VIP Luncheon",
       },
       { time: "14:00–14:30", timeEn: "14:00–14:30", id: "Pujian", en: "Worship" },
       {
@@ -160,12 +160,12 @@ export const programSchedule = [
 
 export const programNotes = {
   id: [
-    "Selasa (12/10) adalah hari puasa penuh; makan siang Rabu (13/10) adalah menu pemulihan puasa.",
+    "Selasa (12/10) adalah hari puasa penuh; sarapan Rabu (13/10) adalah menu pemulihan puasa (boho-sik).",
     "Waktu istirahat & doa pribadi memanfaatkan Gua Doa dan kunjungan ke Bukit Elia.",
     "Program 1 & 2 memerlukan pendaftaran sebelumnya — waktu berbagi budaya Korea serta program pembinaan (O'Sarang, Mother's Dream, Sekolah Alkitab, dll.).",
   ],
   en: [
-    "Tuesday (12 Oct) is a full-day fast; Wednesday's (13 Oct) lunch is a post-fast recovery meal.",
+    "Tuesday (12 Oct) is a full-day fast; Wednesday's (13 Oct) breakfast is a post-fast recovery meal (boho-sik).",
     "Rest & personal prayer time makes use of the Prayer Cave and visits to Elijah's Hill.",
     "Programs 1 & 2 require advance registration — time to share Korean culture and discipleship programs (O'Sarang, Mother's Dream, Bible School, etc.).",
   ],

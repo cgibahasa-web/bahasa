@@ -1,4 +1,5 @@
-import { eventFacts } from "@/content/event";
+import Link from "next/link";
+import { eventFacts, organizer } from "@/content/event";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
@@ -20,63 +21,159 @@ export default function EnTermsPage() {
       <section className="mx-auto w-full max-w-2xl space-y-8 px-6 py-14 text-sm leading-relaxed text-navy/80 sm:px-10 sm:text-base">
         <div>
           <h2 className="text-lg font-semibold text-navy">
-            1. Use of This Site
+            Article 1 (Purpose)
           </h2>
           <p className="mt-2">
-            The {eventFacts.name} website is provided to share official
-            information about the event. Content on this site may not be
-            copied or reused for commercial purposes without written
-            permission from {eventFacts.host}.
+            These terms and conditions govern the registration and
+            participation requirements for &quot;{eventFacts.name}&quot;,
+            organized by {organizer.legalName.en} ({organizer.legalName.ko}
+            ), including the rights and obligations between the organizer
+            and participants.
           </p>
         </div>
 
         <div>
           <h2 className="text-lg font-semibold text-navy">
-            2. Registration Status
+            Article 2 (Definitions)
+          </h2>
+          <ul className="mt-2 list-disc space-y-1 pl-5">
+            <li>
+              &quot;Participant&quot; means an individual who submits a
+              registration through this site to attend the event.
+            </li>
+            <li>
+              &quot;Registration Fee&quot; means the amount a participant
+              must pay to attend the event. The amount will be announced on
+              the official website before registration opens.
+            </li>
+            <li>
+              &quot;Confirmed Registration&quot; means a registration status
+              that becomes final once the registration fee has been
+              successfully paid through the designated payment gateway (PG).
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 className="text-lg font-semibold text-navy">
+            Article 3 (Effect and Amendment of These Terms)
           </h2>
           <p className="mt-2">
-            Registration and payment for this conference are not yet open.
-            The registration deadline is{" "}
-            {eventFacts.registrationDeadline.en}. {eventFacts.earlyBird.en}{" "}
-            Payment methods will be announced once registration opens.
+            These terms take effect upon publication on the site. The
+            organizer may amend these terms as operationally necessary, and
+            any changes will be announced on the official website before
+            taking effect.
           </p>
         </div>
 
         <div>
           <h2 className="text-lg font-semibold text-navy">
-            3. Refund Policy
-          </h2>
-          <p className="mt-2">{eventFacts.refundPolicy.en}</p>
-        </div>
-
-        <div>
-          <h2 className="text-lg font-semibold text-navy">
-            4. Changes to Schedule or Information
+            Article 4 (Registration Application and Acceptance)
           </h2>
           <p className="mt-2">
-            {eventFacts.host} reserves the right to change the schedule,
-            program, or other information listed on this site. Changes will
-            be announced on the official website.
+            Registration is submitted by completing the online registration
+            form. A registration is considered confirmed once the
+            participant has fully paid the registration fee through the
+            payment gateway (PG) designated by the organizer.
           </p>
         </div>
 
         <div>
-          <h2 className="text-lg font-semibold text-navy">5. Contact</h2>
+          <h2 className="text-lg font-semibold text-navy">
+            Article 5 (Registration Fee and Payment)
+          </h2>
+          <p className="mt-2">
+            The registration fee amount will be announced on the official
+            website before registration opens. Payments are processed
+            through a third-party payment gateway partnered with
+            the organizer; supported credit/debit cards and Indonesian local
+            payment methods may be used. Payment information (such as card
+            numbers) is processed and stored directly by the payment
+            gateway, and this site does not store participants&apos; payment
+            card information.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-lg font-semibold text-navy">
+            Article 6 (Cancellation and Refunds)
+          </h2>
+          <p className="mt-2">
+            Cancellation and refund terms are set out separately in the{" "}
+            <Link href="/en/refund" className="underline underline-offset-4">
+              Refund Policy
+            </Link>
+            , which forms an integral part of these terms and conditions.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-lg font-semibold text-navy">
+            Article 7 (Participant Obligations)
+          </h2>
+          <p className="mt-2">
+            Participants are solely responsible for ensuring their own
+            travel documentation is in order, including but not limited to
+            a passport and entry visa for South Korea, and for meeting all
+            applicable immigration requirements. The organizer is not liable
+            for any loss arising from a participant&apos;s failure to meet
+            these requirements.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-lg font-semibold text-navy">
+            Article 8 (Limitation of Liability)
+          </h2>
+          <p className="mt-2">
+            The organizer is not liable for changes, postponement, or
+            cancellation of the event caused by force majeure, including but
+            not limited to natural disasters, government measures, or
+            circumstances reasonably beyond the organizer&apos;s control. In
+            such cases, the organizer will announce further steps on the
+            official website.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-lg font-semibold text-navy">
+            Article 9 (Dispute Resolution and Jurisdiction)
+          </h2>
+          <p className="mt-2">
+            Disputes arising in connection with these terms will first be
+            resolved through good-faith consultation between the parties. If
+            no agreement is reached, disputes will be resolved under the
+            laws of the Republic of Korea, with jurisdiction in the
+            competent court of the organizer&apos;s domicile.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-lg font-semibold text-navy">
+            Supplementary Provision
+          </h2>
+          <p className="mt-2">
+            These terms and conditions take effect from the date official
+            registration is announced as open on this site.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-lg font-semibold text-navy">Contact</h2>
           <p className="mt-2">
             Questions about these terms may be sent to{" "}
             <a
-              href={`mailto:${eventFacts.contactEmail}`}
+              href={`mailto:${organizer.email}`}
               className="underline underline-offset-4"
             >
-              {eventFacts.contactEmail}
+              {organizer.email}
             </a>
             .
           </p>
         </div>
 
         <p className="text-xs text-navy/50">
-          Last updated: [date to be added once these terms are formally
-          approved].
+          Last updated: [date to be added once official registration opens].
         </p>
       </section>
     </main>

@@ -1,4 +1,5 @@
-import { eventFacts, feeInclusions } from "@/content/event";
+import { eventFacts, feeExclusions, feeInclusions } from "@/content/event";
+import { programNotes } from "@/content/program";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
@@ -26,7 +27,7 @@ export default function EnParticipantGuidePage() {
             Registration Fee
           </h2>
           <p className="mt-3 text-3xl font-bold text-brand-red sm:text-4xl">
-            {eventFacts.fee.amount}
+            {eventFacts.fee.pending.en}
           </p>
           <p className="mt-4 text-sm text-navy/70 sm:text-base">
             Registration deadline: {eventFacts.registrationDeadline.en}
@@ -49,6 +50,15 @@ export default function EnParticipantGuidePage() {
       </section>
 
       <section className="mx-auto w-full max-w-2xl px-6 py-14 sm:px-10">
+        <h2 className="text-lg font-semibold sm:text-xl">Not Included</h2>
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-navy/70 sm:text-base">
+          {feeExclusions.map((item) => (
+            <li key={item.en}>{item.en}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mx-auto w-full max-w-2xl px-6 py-14 sm:px-10">
         <h2 className="text-lg font-semibold sm:text-xl">What to Bring</h2>
         <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
           [A list of recommended items to bring will be added soon.]
@@ -60,6 +70,9 @@ export default function EnParticipantGuidePage() {
           <h2 className="text-lg font-semibold sm:text-xl">Meals</h2>
           <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
             {feeInclusions[1].en}
+          </p>
+          <p className="mt-2 text-sm leading-relaxed text-navy/70 sm:text-base">
+            {programNotes.en[0]}
           </p>
         </div>
       </section>

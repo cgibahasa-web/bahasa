@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { eventFacts, heroImage, venuePhotos } from "@/content/event";
+import {
+  eventFacts,
+  feeExclusions,
+  feeInclusions,
+  heroImage,
+  venuePhotos,
+} from "@/content/event";
 import { faqItems } from "@/content/faq";
 import { buildMetadata } from "@/lib/metadata";
 
@@ -12,10 +18,25 @@ export const metadata = buildMetadata({
   absoluteTitle: true,
 });
 
-const programDays = [
+const programDays: {
+  label: string;
+  date: string;
+  highlight: string;
+  note?: string;
+}[] = [
   { label: "Day 1", date: "11 October", highlight: "Opening Service" },
-  { label: "Day 2", date: "12 October", highlight: "Seminars & KKR I" },
-  { label: "Day 3", date: "13 October", highlight: "Seminars & KKR II" },
+  {
+    label: "Day 2",
+    date: "12 October",
+    highlight: "Seminars & KKR I",
+    note: "Full-day fast",
+  },
+  {
+    label: "Day 3",
+    date: "13 October",
+    highlight: "Seminars & KKR II",
+    note: "Boho-sik breakfast",
+  },
   {
     label: "Day 4",
     date: "14 October",
@@ -113,6 +134,11 @@ export default function EnHomePage() {
                 <p className="mt-2 text-xs text-ivory/60">
                   {day.highlight}
                 </p>
+                {day.note && (
+                  <p className="mt-1 text-xs font-medium text-gold">
+                    {day.note}
+                  </p>
+                )}
               </li>
             ))}
           </ul>
@@ -157,12 +183,30 @@ export default function EnHomePage() {
             Registration Fee
           </h2>
           <p className="mt-4 text-3xl font-bold text-brand-red sm:text-4xl">
-            {eventFacts.fee.amount}
+            {eventFacts.fee.pending.en}
           </p>
-          <p className="mt-4 text-sm text-navy/70 sm:text-base">
-            [Details of what is included in the registration fee will be
-            added soon.]
-          </p>
+          <div className="mt-6 grid gap-6 text-left sm:grid-cols-2">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-navy/50">
+                Included
+              </p>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-navy/70">
+                {feeInclusions.map((item) => (
+                  <li key={item.en}>{item.en}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-navy/50">
+                Not Included
+              </p>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-navy/70">
+                {feeExclusions.map((item) => (
+                  <li key={item.en}>{item.en}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 

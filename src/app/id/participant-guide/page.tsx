@@ -1,4 +1,5 @@
-import { eventFacts, feeInclusions } from "@/content/event";
+import { eventFacts, feeExclusions, feeInclusions } from "@/content/event";
+import { programNotes } from "@/content/program";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
@@ -26,7 +27,7 @@ export default function IdParticipantGuidePage() {
             Biaya Pendaftaran
           </h2>
           <p className="mt-3 text-3xl font-bold text-brand-red sm:text-4xl">
-            {eventFacts.fee.amount}
+            {eventFacts.fee.pending.id}
           </p>
           <p className="mt-4 text-sm text-navy/70 sm:text-base">
             Batas pendaftaran: {eventFacts.registrationDeadline.id}
@@ -51,6 +52,17 @@ export default function IdParticipantGuidePage() {
       </section>
 
       <section className="mx-auto w-full max-w-2xl px-6 py-14 sm:px-10">
+        <h2 className="text-lg font-semibold sm:text-xl">
+          Tidak Termasuk dalam Biaya
+        </h2>
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-navy/70 sm:text-base">
+          {feeExclusions.map((item) => (
+            <li key={item.id}>{item.id}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mx-auto w-full max-w-2xl px-6 py-14 sm:px-10">
         <h2 className="text-lg font-semibold sm:text-xl">Yang Perlu Dibawa</h2>
         <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
           [Daftar barang bawaan yang disarankan akan segera dilengkapi.]
@@ -62,6 +74,9 @@ export default function IdParticipantGuidePage() {
           <h2 className="text-lg font-semibold sm:text-xl">Makanan</h2>
           <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
             {feeInclusions[1].id}
+          </p>
+          <p className="mt-2 text-sm leading-relaxed text-navy/70 sm:text-base">
+            {programNotes.id[0]}
           </p>
         </div>
       </section>

@@ -1,4 +1,4 @@
-import { eventFacts } from "@/content/event";
+import { eventFacts, organizer } from "@/content/event";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
@@ -24,8 +24,17 @@ export default function EnPrivacyPage() {
         <div>
           <h2 className="text-lg font-semibold text-navy">1. Organizer</h2>
           <p className="mt-2">
-            This site is operated by {eventFacts.host}. [The official legal
-            entity name and address of the organizer will be added soon.]
+            This site is operated by {organizer.legalName.en} (
+            {organizer.legalName.ko}), a registered nonprofit organization
+            (Unique Registration No. {organizer.registrationNumber}) located
+            at {organizer.address.en}. The organizer can be reached at{" "}
+            <a
+              href={`mailto:${organizer.email}`}
+              className="underline underline-offset-4"
+            >
+              {organizer.email}
+            </a>
+            .
           </p>
         </div>
 
@@ -39,9 +48,12 @@ export default function EnPrivacyPage() {
             email, we receive your name, email address, and message content.
           </p>
           <p className="mt-2">
-            [Details of the data to be collected once registration opens —
-            including personal data and payment status — will be added
-            before the registration feature is activated.]
+            Once registration opens, this site will collect: name, contact
+            number, email address, country of residence, home
+            church/organization, registration type (individual/group), and
+            payment status. Payment card information (such as card numbers)
+            is not stored by this site — it is processed directly by a
+            third-party payment gateway.
           </p>
         </div>
 
@@ -51,8 +63,9 @@ export default function EnPrivacyPage() {
           </h2>
           <p className="mt-2">
             Data sent by email is used to respond to your questions about
-            the conference. [How registration data will be used will be
-            added together with the registration launch.]
+            the conference. Registration data will be used to: confirm
+            registration, process payment, send event information, and issue
+            an invitation letter where required.
           </p>
         </div>
 
@@ -61,9 +74,11 @@ export default function EnPrivacyPage() {
             4. Sharing with Third Parties
           </h2>
           <p className="mt-2">
-            [Information about the payment provider (Midtrans) and any other
-            third parties that will receive participant data will be added
-            before the registration and payment features are activated.]
+            For payment processing, relevant registration information (name,
+            payment amount, and related transaction data) is shared with
+            PortOne and its connected payment gateway (PG) providers. This
+            site does not share your personal data with any other third
+            party beyond this purpose.
           </p>
         </div>
 
@@ -71,7 +86,12 @@ export default function EnPrivacyPage() {
           <h2 className="text-lg font-semibold text-navy">
             5. Data Retention
           </h2>
-          <p className="mt-2">[The data retention period will be added.]</p>
+          <p className="mt-2">
+            Participants&apos; personal data is retained for{" "}
+            {organizer.dataRetentionPeriod.en}, or as required by applicable
+            law (including e-commerce/electronic transaction regulations),
+            after which it is securely deleted.
+          </p>
         </div>
 
         <div>
@@ -82,10 +102,10 @@ export default function EnPrivacyPage() {
             You may request access to, correction of, or deletion of your
             personal data by contacting{" "}
             <a
-              href={`mailto:${eventFacts.contactEmail}`}
+              href={`mailto:${organizer.email}`}
               className="underline underline-offset-4"
             >
-              {eventFacts.contactEmail}
+              {organizer.email}
             </a>
             .
           </p>
@@ -98,6 +118,23 @@ export default function EnPrivacyPage() {
           <p className="mt-2">
             [Information about cookies and analytics tools will be added if
             the site enables such features.]
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-lg font-semibold text-navy">
+            8. Data Protection Officer
+          </h2>
+          <p className="mt-2">
+            Data Protection Officer: {organizer.dataProtectionOfficer}.
+            Inquiries and requests regarding personal data may be sent to{" "}
+            <a
+              href={`mailto:${organizer.email}`}
+              className="underline underline-offset-4"
+            >
+              {organizer.email}
+            </a>
+            .
           </p>
         </div>
 

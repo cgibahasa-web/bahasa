@@ -1,4 +1,4 @@
-import { eventFacts } from "@/content/event";
+import { eventFacts, organizer } from "@/content/event";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
@@ -28,8 +28,20 @@ export default function IdPrivacyPage() {
             1. Penyelenggara
           </h2>
           <p className="mt-2">
-            Situs ini dikelola oleh {eventFacts.host}. [Nama badan hukum resmi
-            dan alamat penyelenggara akan segera dilengkapi.]
+            Situs ini dikelola oleh {organizer.legalName.ko} (
+            {organizer.legalName.en}), badan nonprofit yang terdaftar dengan
+            Nomor Registrasi Unik (No. Registrasi Badan Nonprofit)
+            {" "}
+            {organizer.registrationNumber}, berkedudukan di{" "}
+            {organizer.address.ko}, Republic of Korea. Penyelenggara dapat
+            dihubungi melalui{" "}
+            <a
+              href={`mailto:${organizer.email}`}
+              className="underline underline-offset-4"
+            >
+              {organizer.email}
+            </a>
+            .
           </p>
         </div>
 
@@ -44,9 +56,12 @@ export default function IdPrivacyPage() {
             dan isi pesan yang Anda kirimkan.
           </p>
           <p className="mt-2">
-            [Rincian data yang akan dikumpulkan saat pendaftaran dibuka —
-            termasuk data pribadi dan status pembayaran — akan dilengkapi
-            sebelum fitur pendaftaran diaktifkan.]
+            Saat pendaftaran dibuka, situs ini akan mengumpulkan: nama,
+            nomor kontak, alamat email, negara domisili, gereja/lembaga
+            asal, jenis pendaftaran (individu/kelompok), dan status
+            pembayaran. Informasi kartu pembayaran (nomor kartu, dll.) tidak
+            disimpan oleh situs ini — data tersebut diproses langsung oleh
+            penyedia layanan pembayaran (Payment Gateway) pihak ketiga.
           </p>
         </div>
 
@@ -56,8 +71,10 @@ export default function IdPrivacyPage() {
           </h2>
           <p className="mt-2">
             Data yang dikirimkan melalui email digunakan untuk menjawab
-            pertanyaan Anda seputar konferensi. [Tujuan penggunaan data
-            pendaftaran akan dilengkapi bersama pembukaan pendaftaran.]
+            pertanyaan Anda seputar konferensi. Data pendaftaran akan
+            digunakan untuk: konfirmasi pendaftaran, pemrosesan pembayaran,
+            pengiriman informasi acara, dan penerbitan surat undangan
+            (invitation letter) apabila diperlukan.
           </p>
         </div>
 
@@ -66,9 +83,11 @@ export default function IdPrivacyPage() {
             4. Berbagi Data dengan Pihak Ketiga
           </h2>
           <p className="mt-2">
-            [Informasi mengenai penyedia pembayaran (Midtrans) dan pihak
-            ketiga lain yang akan menerima data peserta akan dilengkapi
-            sebelum fitur pendaftaran dan pembayaran diaktifkan.]
+            Untuk pemrosesan pembayaran, informasi pendaftaran yang relevan
+            (nama, jumlah pembayaran, dan data transaksi terkait) dibagikan
+            kepada PortOne dan penyedia layanan pembayaran (PG) yang
+            terhubung dengannya. Situs ini tidak membagikan data pribadi
+            Anda kepada pihak ketiga lain di luar keperluan tersebut.
           </p>
         </div>
 
@@ -76,7 +95,13 @@ export default function IdPrivacyPage() {
           <h2 className="text-lg font-semibold text-navy">
             5. Jangka Waktu Penyimpanan
           </h2>
-          <p className="mt-2">[Jangka waktu penyimpanan data akan dilengkapi.]</p>
+          <p className="mt-2">
+            Data pribadi peserta disimpan selama{" "}
+            {organizer.dataRetentionPeriod.id}, atau sesuai jangka waktu yang
+            diwajibkan oleh peraturan perundang-undangan yang berlaku
+            (termasuk peraturan transaksi elektronik), lalu akan dihapus
+            secara aman.
+          </p>
         </div>
 
         <div>
@@ -87,10 +112,10 @@ export default function IdPrivacyPage() {
             Anda dapat meminta akses, koreksi, atau penghapusan data pribadi
             Anda dengan menghubungi{" "}
             <a
-              href={`mailto:${eventFacts.contactEmail}`}
+              href={`mailto:${organizer.email}`}
               className="underline underline-offset-4"
             >
-              {eventFacts.contactEmail}
+              {organizer.email}
             </a>
             .
           </p>
@@ -103,6 +128,24 @@ export default function IdPrivacyPage() {
           <p className="mt-2">
             [Informasi mengenai penggunaan cookie dan alat analitik akan
             dilengkapi jika situs mengaktifkan fitur tersebut.]
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-lg font-semibold text-navy">
+            8. Penanggung Jawab Perlindungan Data Pribadi
+          </h2>
+          <p className="mt-2">
+            Penanggung jawab perlindungan data pribadi:{" "}
+            {organizer.dataProtectionOfficer}. Pertanyaan dan permintaan
+            terkait data pribadi dapat dikirimkan ke{" "}
+            <a
+              href={`mailto:${organizer.email}`}
+              className="underline underline-offset-4"
+            >
+              {organizer.email}
+            </a>
+            .
           </p>
         </div>
 

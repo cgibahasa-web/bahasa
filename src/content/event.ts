@@ -28,7 +28,14 @@ export const eventFacts = {
     en: "This conference aims to advance evangelism and spiritual revival in Indonesia through the shared spirituality of the Full Gospel movement, and to serve as an exchange for the growth of Christianity in Korea and Indonesia.",
   },
   fee: {
+    // Not yet approved for public announcement — do not display `amount`
+    // on the site. Show `pending` instead until finance confirms it.
     amount: "USD $100",
+    announced: false,
+    pending: {
+      id: "Akan diumumkan",
+      en: "To be announced",
+    },
   },
   contactEmail: "info@cgikorea.kr",
   registrationDeadline: {
@@ -40,8 +47,8 @@ export const eventFacts = {
     en: "Early registration (January–March each year) receives a discount; the discount amount will be announced later.",
   },
   refundPolicy: {
-    id: "Pembatalan hingga dua bulan sebelum acara (11 Agustus 2027) mendapat pengembalian dana 100%. Pembatalan setelah tanggal tersebut tidak dapat dikembalikan.",
-    en: "Cancellations made up to two months before the event (11 August 2027) receive a 100% refund. Cancellations after that date are non-refundable.",
+    id: "Pembatalan hingga satu bulan sebelum acara (11 September 2027) mendapat pengembalian dana 100%. Pembatalan setelah tanggal tersebut tidak dapat dikembalikan.",
+    en: "Cancellations made up to one month before the event (11 September 2027) receive a 100% refund. Cancellations after that date are non-refundable.",
   },
   transportInfo: {
     id: "Transportasi akan disediakan bagi peserta yang telah mendaftar (pra-pendaftaran) sebelumnya.",
@@ -50,6 +57,30 @@ export const eventFacts = {
   interpretationInfo: {
     id: "Ya, penerjemahan/interpretasi bahasa Indonesia tersedia selama acara.",
     en: "Yes, Indonesian interpretation is provided throughout the event.",
+  },
+} as const;
+
+// PG(PortOne) 심사 대비 확정 사업자(단체) 정보 — 국세청 고유번호증(2022-11-02, 마포세무서) 기준.
+// 사업자등록증이 아닌 비영리법인 고유번호증이므로 결제대행사 신청 시 "비영리단체(고유번호)" 유형으로 등록한다.
+export const organizer = {
+  legalName: {
+    ko: "국제교회성장연구원(CGI)",
+    en: "International Church Growth Institute (CGI)",
+  },
+  representative: {
+    ko: "이영훈",
+    en: "Lee Young Hoon",
+  },
+  registrationNumber: "609-82-84201",
+  address: {
+    ko: "서울특별시 마포구 서강로 19, 3층(신정동)",
+    en: "3F, 19 Seogang-ro, Mapo-gu, Seoul, Republic of Korea",
+  },
+  email: "cgibahasa@gmail.com",
+  dataProtectionOfficer: "Joseph Lee",
+  dataRetentionPeriod: {
+    id: "1 tahun setelah acara berakhir",
+    en: "1 year after the event ends",
   },
 } as const;
 
@@ -88,6 +119,21 @@ export const feeInclusions = [
   {
     id: "Transportasi lokal (mis. antar-jemput ke/dari gereja mitra)",
     en: "Local transportation (e.g., shuttle to/from partner churches)",
+  },
+] as const;
+
+export const feeExclusions = [
+  {
+    id: "Tiket pesawat / transportasi internasional menuju Korea",
+    en: "International airfare / transportation to Korea",
+  },
+  {
+    id: "Biaya pengurusan visa",
+    en: "Visa application fees",
+  },
+  {
+    id: "Pengeluaran pribadi di luar program resmi",
+    en: "Personal expenses outside the official program",
   },
 ] as const;
 

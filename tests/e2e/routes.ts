@@ -9,6 +9,7 @@ export const paths = [
   "/registration",
   "/privacy",
   "/terms",
+  "/refund",
 ];
 
 export const locales = ["id", "en"] as const;

@@ -1,3 +1,5 @@
+import { eventFacts } from "@/content/event";
+
 export const faqItems = [
   {
     id: "Apa saja yang perlu disiapkan peserta?",
@@ -40,8 +42,8 @@ export const faqItems = [
     id: "Bagaimana jika saya perlu membatalkan pendaftaran?",
     en: "What if I need to cancel my registration?",
     answer: {
-      id: "Pembatalan hingga dua bulan sebelum acara (11 Agustus 2027) mendapat pengembalian dana 100%. Pembatalan setelah tanggal tersebut tidak dapat dikembalikan.",
-      en: "Cancellations made up to two months before the event (11 August 2027) receive a 100% refund. Cancellations after that date are non-refundable.",
+      id: eventFacts.refundPolicy.id,
+      en: eventFacts.refundPolicy.en,
     },
   },
 ] as const;

@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { eventFacts, heroImage, venuePhotos } from "@/content/event";
+import {
+  eventFacts,
+  feeExclusions,
+  feeInclusions,
+  heroImage,
+  venuePhotos,
+} from "@/content/event";
 import { faqItems } from "@/content/faq";
 import { buildMetadata } from "@/lib/metadata";
 
@@ -12,10 +18,25 @@ export const metadata = buildMetadata({
   absoluteTitle: true,
 });
 
-const programDays = [
+const programDays: {
+  label: string;
+  date: string;
+  highlight: string;
+  note?: string;
+}[] = [
   { label: "Hari 1", date: "11 Oktober", highlight: "Ibadah Pembukaan" },
-  { label: "Hari 2", date: "12 Oktober", highlight: "Seminar & KKR I" },
-  { label: "Hari 3", date: "13 Oktober", highlight: "Seminar & KKR II" },
+  {
+    label: "Hari 2",
+    date: "12 Oktober",
+    highlight: "Seminar & KKR I",
+    note: "Puasa sepanjang hari",
+  },
+  {
+    label: "Hari 3",
+    date: "13 Oktober",
+    highlight: "Seminar & KKR II",
+    note: "Sarapan boho-sik",
+  },
   { label: "Hari 4", date: "14 Oktober", highlight: "Kesaksian & Kepulangan" },
 ];
 
@@ -107,6 +128,11 @@ export default function IdHomePage() {
                 </p>
                 <p className="mt-1 text-sm">{day.date}</p>
                 <p className="mt-2 text-xs text-ivory/60">{day.highlight}</p>
+                {day.note && (
+                  <p className="mt-1 text-xs font-medium text-gold">
+                    {day.note}
+                  </p>
+                )}
               </li>
             ))}
           </ul>
@@ -151,12 +177,30 @@ export default function IdHomePage() {
             Biaya Pendaftaran
           </h2>
           <p className="mt-4 text-3xl font-bold text-brand-red sm:text-4xl">
-            {eventFacts.fee.amount}
+            {eventFacts.fee.pending.id}
           </p>
-          <p className="mt-4 text-sm text-navy/70 sm:text-base">
-            [Rincian item yang termasuk dalam biaya pendaftaran akan segera
-            dilengkapi.]
-          </p>
+          <div className="mt-6 grid gap-6 text-left sm:grid-cols-2">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-navy/50">
+                Termasuk
+              </p>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-navy/70">
+                {feeInclusions.map((item) => (
+                  <li key={item.id}>{item.id}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-navy/50">
+                Tidak Termasuk
+              </p>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-navy/70">
+                {feeExclusions.map((item) => (
+                  <li key={item.id}>{item.id}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 

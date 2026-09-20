@@ -8,6 +8,7 @@ const staticPaths = [
   "/registration",
   "/privacy",
   "/terms",
+  "/refund",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
