@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { eventFacts, organizer } from "@/content/event";
+import { cgiLogo, eventFacts, organizer } from "@/content/event";
 
 const footerCopy = {
   id: {
@@ -30,7 +31,16 @@ export function SiteFooter({ locale }: { locale: "id" | "en" }) {
   const t = footerCopy[locale];
   return (
     <footer className="border-t border-navy/10 bg-navy-deep px-6 py-10 text-center text-xs text-ivory/60 sm:px-10">
-      <p className="font-medium text-ivory/80">{eventFacts.name}</p>
+      <div className="mx-auto inline-block rounded-md bg-ivory px-3 py-2">
+        <Image
+          src={cgiLogo.src}
+          alt={cgiLogo.alt}
+          width={cgiLogo.width}
+          height={cgiLogo.height}
+          className="h-7 w-auto"
+        />
+      </div>
+      <p className="mt-3 font-medium text-ivory/80">{eventFacts.name}</p>
 
       <div className="mx-auto mt-4 max-w-md space-y-1">
         <p>

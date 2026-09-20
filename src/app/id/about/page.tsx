@@ -1,6 +1,7 @@
 import Image from "next/image";
 import {
   cgiIntro,
+  cgiLogo,
   eventFacts,
   welcomeMessage,
   welcomeMessageAuthor,
@@ -35,7 +36,14 @@ export default function IdAboutPage() {
 
       <section className="mx-auto w-full max-w-3xl px-6 pb-14 sm:px-10">
         <h2 className="text-lg font-semibold sm:text-xl">Tentang CGI</h2>
-        <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
+        <Image
+          src={cgiLogo.src}
+          alt={cgiLogo.alt}
+          width={cgiLogo.width}
+          height={cgiLogo.height}
+          className="mt-4 h-12 w-auto"
+        />
+        <p className="mt-4 text-sm leading-relaxed text-navy/70 sm:text-base">
           {cgiIntro.id}
         </p>
       </section>

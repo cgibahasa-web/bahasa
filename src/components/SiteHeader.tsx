@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navItems } from "@/content/nav";
-import { eventFacts } from "@/content/event";
+import { cgiLogo, eventFacts } from "@/content/event";
 
 export function SiteHeader({ locale }: { locale: "id" | "en" }) {
   const pathname = usePathname();
@@ -22,9 +23,17 @@ export function SiteHeader({ locale }: { locale: "id" | "en" }) {
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-3 px-6 py-4 sm:px-10">
         <Link
           href={`/${locale}`}
-          className="text-lg font-extrabold tracking-tight text-navy sm:text-xl"
+          className="flex items-center gap-3 text-lg font-extrabold tracking-tight text-navy sm:text-xl"
         >
-          {eventFacts.name}
+          <Image
+            src={cgiLogo.src}
+            alt={cgiLogo.alt}
+            width={cgiLogo.width}
+            height={cgiLogo.height}
+            className="h-8 w-auto sm:h-9"
+            priority
+          />
+          <span>{eventFacts.name}</span>
         </Link>
         <nav
           aria-label={locale === "id" ? "Navigasi utama" : "Main navigation"}
