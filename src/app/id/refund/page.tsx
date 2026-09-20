@@ -8,8 +8,6 @@ export const metadata = buildMetadata({
   description: `Kebijakan pembatalan dan pengembalian dana untuk ${eventFacts.name}.`,
 });
 
-const PENDING = "Detail ini masih menunggu konfirmasi resmi tim keuangan.";
-
 export default function IdRefundPage() {
   return (
     <main className="flex flex-1 flex-col bg-ivory text-navy">
@@ -22,42 +20,34 @@ export default function IdRefundPage() {
       <section className="mx-auto w-full max-w-2xl space-y-8 px-6 py-14 text-sm leading-relaxed text-navy/80 sm:px-10 sm:text-base">
         <div className="rounded-lg border border-gold/40 bg-gold/10 px-4 py-3 text-xs text-navy/70 sm:text-sm">
           Halaman ini menjelaskan kebijakan pembatalan dan pengembalian dana
-          untuk {eventFacts.name}. Sebagian detail yang ditandai &quot;
-          {PENDING}&quot; masih menunggu konfirmasi akhir dari tim keuangan.
+          untuk {eventFacts.name}.
         </div>
 
         <div>
           <h2 className="text-lg font-semibold text-navy">
-            1. Diskon Pendaftaran Awal (Early Bird)
-          </h2>
-          <p className="mt-2">{PENDING}</p>
-        </div>
-
-        <div>
-          <h2 className="text-lg font-semibold text-navy">
-            2. Batas Pengembalian Dana Penuh
+            1. Batas Pengembalian Dana Penuh
           </h2>
           <p className="mt-2">{eventFacts.refundPolicy.id}</p>
         </div>
 
         <div>
           <h2 className="text-lg font-semibold text-navy">
-            3. Batas Akhir Pendaftaran
+            2. Batas Akhir Pendaftaran
           </h2>
           <p className="mt-2">
             Batas akhir pendaftaran adalah {eventFacts.registrationDeadline.id}
             , yaitu tanggal yang sama dengan batas akhir pengembalian dana
-            pada No. 2.
+            pada No. 1.
           </p>
         </div>
 
         <div>
           <h2 className="text-lg font-semibold text-navy">
-            4. Pengembalian Dana Akibat Penolakan Visa
+            3. Pengembalian Dana Akibat Penolakan Visa
           </h2>
           <p className="mt-2">
             Pembatalan akibat penolakan visa mengikuti kebijakan pengembalian
-            dana umum pada No. 2: pembatalan yang diajukan sebelum batas
+            dana umum pada No. 1: pembatalan yang diajukan sebelum batas
             waktu tersebut tetap mendapat pengembalian dana 100%, sedangkan
             pengajuan setelah batas waktu tersebut tidak dapat dikembalikan,
             termasuk jika disebabkan oleh penolakan visa.
@@ -66,7 +56,7 @@ export default function IdRefundPage() {
 
         <div>
           <h2 className="text-lg font-semibold text-navy">
-            5. Pengembalian Dana Akibat Pembatalan Acara
+            4. Pengembalian Dana Akibat Pembatalan Acara
           </h2>
           <p className="mt-2">
             Apabila acara dibatalkan sepenuhnya oleh penyelenggara,{" "}
@@ -79,24 +69,47 @@ export default function IdRefundPage() {
 
         <div>
           <h2 className="text-lg font-semibold text-navy">
-            6. Cara Pengajuan dan Estimasi Waktu Proses
+            5. Apabila Acara Ditunda
+          </h2>
+          <p className="mt-2">{eventFacts.eventPostponementPolicy.id}</p>
+        </div>
+
+        <div>
+          <h2 className="text-lg font-semibold text-navy">
+            6. Pembayaran Ganda
+          </h2>
+          <p className="mt-2">{eventFacts.duplicatePaymentPolicy.id}</p>
+        </div>
+
+        <div>
+          <h2 className="text-lg font-semibold text-navy">
+            7. Cara Pengajuan, Estimasi Waktu Proses, dan Metode Pengembalian
+            Dana
           </h2>
           <p className="mt-2">
-            Pengajuan pengembalian dana dilakukan dengan menghubungi{" "}
+            Pengajuan pengembalian dana dilakukan dengan mengirim email ke{" "}
             <a
               href={`mailto:${organizer.email}`}
               className="underline underline-offset-4"
             >
               {organizer.email}
             </a>{" "}
-            paling lambat {eventFacts.registrationDeadline.id}. Estimasi
-            waktu proses: {PENDING}
+            dengan mencantumkan nama, tanggal pendaftaran, jumlah yang
+            dibayarkan, dan alasan pengembalian dana, paling lambat{" "}
+            {eventFacts.registrationDeadline.id}.
+          </p>
+          <p className="mt-2">
+            Estimasi waktu proses: {eventFacts.refundProcessingTime.id}.
+          </p>
+          <p className="mt-2">
+            Metode pengembalian dana: {eventFacts.refundMethod.id}.
           </p>
         </div>
 
         <p className="text-xs text-navy/50">
-          Terakhir diperbarui: 2026-09-20 (batas pengembalian dana
-          dikonfirmasi satu bulan sebelum acara).
+          Terakhir diperbarui: 2026-09-21 (cara pengajuan, estimasi waktu
+          proses, metode pengembalian dana, kebijakan penundaan acara, dan
+          penanganan pembayaran ganda ditambahkan menjelang tinjauan PG).
         </p>
       </section>
     </main>

@@ -28,27 +28,68 @@ export const eventFacts = {
     en: "This conference aims to advance evangelism and spiritual revival in Indonesia through the shared spirituality of the Full Gospel movement, and to serve as an exchange for the growth of Christianity in Korea and Indonesia.",
   },
   fee: {
-    // Not yet approved for public announcement — do not display `amount`
-    // on the site. Show `pending` instead until finance confirms it.
     amount: "USD $100",
-    announced: false,
-    pending: {
-      id: "Akan diumumkan",
-      en: "To be announced",
+    amountUsd: 100,
+    // Price is all-inclusive: no separate tax or PG transaction surcharge
+    // is passed on to participants.
+    allInclusiveNote: {
+      id: "Harga sudah termasuk pajak dan biaya transaksi; tidak ada biaya tambahan yang dibebankan kepada peserta.",
+      en: "The price already includes tax and transaction fees; no additional charges are passed on to participants.",
     },
   },
-  contactEmail: "info@cgikorea.kr",
+  // Group registrations pay the same per-person price as individuals — no
+  // group discount — but are tracked together under a group/church name so
+  // they can be managed as one block on the participant list.
+  groupRegistration: {
+    minSize: 10,
+    note: {
+      id: "Pendaftaran kelompok (minimal 10 orang) dikenakan harga per orang yang sama dengan pendaftaran individu, tanpa diskon kelompok.",
+      en: "Group registration (minimum 10 people) is charged the same per-person price as individual registration — no group discount.",
+    },
+  },
+  contactEmail: "cgibahasa@gmail.com",
   registrationDeadline: {
     id: "11 September 2027 (satu bulan sebelum acara)",
     en: "11 September 2027 (one month before the event)",
   },
-  earlyBird: {
-    id: "Pendaftaran awal (Januari–Maret setiap tahun) mendapatkan potongan harga; besaran diskon akan diumumkan kemudian.",
-    en: "Early registration (January–March each year) receives a discount; the discount amount will be announced later.",
+  // Registration/payment opens on this date. Before it, `/registration`
+  // shows a preview of the flow instead of the interactive wizard.
+  saleStartDate: "2027-01-01",
+  saleStartLabel: {
+    id: "1 Januari 2027",
+    en: "1 January 2027",
+  },
+  paymentProviderNote: {
+    id: "Pembayaran diproses melalui PortOne sebagai penyedia layanan pembayaran (PG). Untuk metode pembayaran lokal Indonesia (GoPay, OVO, dan lainnya), PortOne terhubung dengan Midtrans sebagai penyedia pemrosesan pembayaran lokal.",
+    en: "Payments are processed through PortOne as the payment gateway (PG). For Indonesian local payment methods (GoPay, OVO, and others), PortOne connects to Midtrans as the local payment processor.",
+  },
+  currencyNote: {
+    id: "Harga ditampilkan dan ditagihkan dalam USD $100. Jika Anda membayar dengan metode pembayaran lokal Indonesia, konversi ke Rupiah dihitung otomatis oleh penyedia pembayaran (PG) sesuai kurs pada saat transaksi; situs ini tidak menampilkan perkiraan nilai Rupiah secara terpisah.",
+    en: "The price is shown and charged in USD $100. If you pay with an Indonesian local payment method, conversion to Rupiah is calculated automatically by the payment gateway (PG) at the exchange rate in effect at the time of the transaction; this site does not separately display an estimated Rupiah amount.",
+  },
+  postPaymentInfo: {
+    id: "Setelah pembayaran berhasil, konfirmasi pendaftaran (beserta nomor pesanan) akan dikirimkan ke email Anda segera. Pada hari acara, masuk ke lokasi dikonfirmasi dengan pencocokan nama pada daftar peserta di meja pendaftaran — tidak ada tiket fisik atau kode QR yang diterbitkan. Untuk pendaftaran kelompok, seluruh nama peserta yang didaftarkan akan dikelompokkan bersama di bawah nama kelompok/gereja pada daftar peserta.",
+    en: "After a successful payment, a registration confirmation (with your order number) will be emailed to you right away. On the day of the event, entry is confirmed by matching your name against the participant list at the registration desk — no physical ticket or QR code is issued. For group registrations, all registered participant names are grouped together under the group/church name on the participant list.",
   },
   refundPolicy: {
     id: "Pembatalan hingga satu bulan sebelum acara (11 September 2027) mendapat pengembalian dana 100%. Pembatalan setelah tanggal tersebut tidak dapat dikembalikan.",
     en: "Cancellations made up to one month before the event (11 September 2027) receive a 100% refund. Cancellations after that date are non-refundable.",
+  },
+  refundProcessingTime: {
+    id: "Paling lambat 14 hari kerja setelah pengajuan disetujui",
+    en: "Within 14 business days after the request is approved",
+  },
+  refundMethod: {
+    id: "Dikembalikan ke metode pembayaran semula (pembatalan otorisasi kartu atau pembatalan pembayaran lokal)",
+    en: "Refunded to the original payment method (card authorization reversal or local payment method cancellation)",
+  },
+  eventPostponementPolicy: {
+    id: "Jika acara ditunda, pendaftaran otomatis dipindahkan ke jadwal baru. Peserta yang ingin pengembalian dana dapat mengajukan melalui prosedur pengembalian dana yang sama.",
+    en: "If the event is postponed, registrations are automatically carried over to the new date. Participants who prefer a refund may apply through the same refund procedure.",
+  },
+  duplicatePaymentPolicy: {
+    id: "Pembayaran ganda diproses dengan kebijakan yang sama seperti pengembalian dana (paling lambat 14 hari kerja, dikembalikan ke metode pembayaran semula).",
+    en: "Duplicate payments are handled under the same policy as refunds (within 14 business days, refunded to the original payment method).",
   },
   transportInfo: {
     id: "Transportasi akan disediakan bagi peserta yang telah mendaftar (pra-pendaftaran) sebelumnya.",

@@ -9,6 +9,7 @@ import {
 } from "@/content/event";
 import { faqItems } from "@/content/faq";
 import { buildMetadata } from "@/lib/metadata";
+import { isSaleOpen as checkSaleOpen } from "@/lib/sale";
 
 export const metadata = buildMetadata({
   locale: "id",
@@ -17,6 +18,10 @@ export const metadata = buildMetadata({
   description: `${eventFacts.dates.id} di ${eventFacts.venue.id}. Situs resmi ${eventFacts.name}.`,
   absoluteTitle: true,
 });
+
+// Re-checks the sale window on every request instead of baking the answer
+// into a statically generated page at build time.
+export const revalidate = 3600;
 
 const programDays: {
   label: string;
@@ -41,6 +46,8 @@ const programDays: {
 ];
 
 export default function IdHomePage() {
+  const isSaleOpen = checkSaleOpen();
+
   return (
     <main className="flex flex-1 flex-col bg-ivory text-navy">
       {/* 1. Hero: 행사명, 주제, 날짜, 장소, 주 행동 버튼 */}
@@ -90,7 +97,9 @@ export default function IdHomePage() {
             Daftar Sekarang
           </Link>
           <p className="hero-text-shadow text-xs text-ivory/80 sm:text-sm">
-            Pendaftaran segera dibuka
+            {isSaleOpen
+              ? "Pendaftaran resmi dibuka"
+              : `Pendaftaran dibuka ${eventFacts.saleStartLabel.id}`}
           </p>
         </div>
       </section>
@@ -177,7 +186,10 @@ export default function IdHomePage() {
             Biaya Pendaftaran
           </h2>
           <p className="mt-4 text-3xl font-bold text-brand-red sm:text-4xl">
-            {eventFacts.fee.pending.id}
+            {eventFacts.fee.amount}
+          </p>
+          <p className="mt-1 text-xs text-navy/50">
+            {eventFacts.fee.allInclusiveNote.id}
           </p>
           <div className="mt-6 grid gap-6 text-left sm:grid-cols-2">
             <div>
@@ -229,9 +241,7 @@ export default function IdHomePage() {
                 className="rounded-lg border border-navy/10 bg-white px-5 py-4"
               >
                 <p className="text-sm font-medium sm:text-base">{item.id}</p>
-                <p className="mt-1 text-sm text-navy/60">
-                  {item.answer ? item.answer.id : "[Jawaban akan segera dilengkapi]"}
-                </p>
+                <p className="mt-1 text-sm text-navy/60">{item.answer.id}</p>
               </li>
             ))}
           </ul>
@@ -250,7 +260,9 @@ export default function IdHomePage() {
       <section className="bg-navy-deep px-6 py-16 text-center text-ivory sm:px-10">
         <h2 className="text-xl font-semibold sm:text-2xl">Siap Bergabung?</h2>
         <p className="mt-2 text-sm text-ivory/70 sm:text-base">
-          Pendaftaran segera dibuka.
+          {isSaleOpen
+            ? "Pendaftaran resmi dibuka."
+            : `Pendaftaran dibuka ${eventFacts.saleStartLabel.id}.`}
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link

@@ -41,8 +41,8 @@ export default function IdTermsPage() {
             </li>
             <li>
               &quot;Biaya Pendaftaran&quot; berarti sejumlah biaya yang wajib
-              dibayarkan peserta untuk mengikuti acara. Besarannya akan
-              diumumkan melalui situs resmi sebelum pendaftaran dibuka.
+              dibayarkan peserta untuk mengikuti acara, yaitu{" "}
+              {eventFacts.fee.amount}. {eventFacts.fee.allInclusiveNote.id}
             </li>
             <li>
               &quot;Pendaftaran Terkonfirmasi&quot; berarti status pendaftaran
@@ -81,14 +81,14 @@ export default function IdTermsPage() {
             Pasal 5 (Biaya Pendaftaran dan Pembayaran)
           </h2>
           <p className="mt-2">
-            Besaran biaya pendaftaran akan diumumkan melalui situs resmi
-            sebelum pendaftaran dibuka. Pembayaran diproses melalui penyedia
-            layanan pembayaran (Payment Gateway) pihak ketiga yang bekerja
-            sama dengan penyelenggara; kartu
-            kredit/debit dan metode pembayaran lokal Indonesia yang didukung
-            dapat digunakan. Informasi pembayaran (nomor kartu, dll.) diproses
-            dan disimpan langsung oleh penyedia layanan pembayaran, dan situs
-            ini tidak menyimpan informasi kartu pembayaran peserta.
+            Biaya pendaftaran adalah {eventFacts.fee.amount}, berlaku sejak
+            pendaftaran dibuka pada {eventFacts.saleStartLabel.id}.{" "}
+            {eventFacts.paymentProviderNote.id} Kartu kredit/debit dan metode
+            pembayaran lokal Indonesia yang didukung dapat digunakan.
+            Informasi pembayaran (nomor kartu, dll.) diproses dan disimpan
+            langsung oleh penyedia layanan pembayaran, dan situs ini tidak
+            menyimpan informasi kartu pembayaran peserta.{" "}
+            {eventFacts.currencyNote.id}
           </p>
         </div>
 
@@ -112,7 +112,14 @@ export default function IdTermsPage() {
 
         <div>
           <h2 className="text-lg font-semibold text-navy">
-            Pasal 7 (Kewajiban Peserta)
+            Pasal 7 (Konfirmasi Pendaftaran dan Masuk Lokasi Acara)
+          </h2>
+          <p className="mt-2">{eventFacts.postPaymentInfo.id}</p>
+        </div>
+
+        <div>
+          <h2 className="text-lg font-semibold text-navy">
+            Pasal 8 (Kewajiban Peserta)
           </h2>
           <p className="mt-2">
             Peserta bertanggung jawab penuh untuk memastikan kelengkapan
@@ -126,7 +133,7 @@ export default function IdTermsPage() {
 
         <div>
           <h2 className="text-lg font-semibold text-navy">
-            Pasal 8 (Pembatasan Tanggung Jawab)
+            Pasal 9 (Pembatasan Tanggung Jawab)
           </h2>
           <p className="mt-2">
             Penyelenggara tidak bertanggung jawab atas perubahan, penundaan,
@@ -141,7 +148,7 @@ export default function IdTermsPage() {
 
         <div>
           <h2 className="text-lg font-semibold text-navy">
-            Pasal 9 (Penyelesaian Sengketa dan Yurisdiksi)
+            Pasal 10 (Penyelesaian Sengketa dan Yurisdiksi)
           </h2>
           <p className="mt-2">
             Segala sengketa yang timbul sehubungan dengan syarat dan ketentuan
@@ -157,8 +164,9 @@ export default function IdTermsPage() {
             Ketentuan Penutup
           </h2>
           <p className="mt-2">
-            Syarat dan ketentuan ini mulai berlaku sejak tanggal pembukaan
-            pendaftaran resmi diumumkan di situs ini.
+            Syarat dan ketentuan ini mulai berlaku efektif sejak{" "}
+            {eventFacts.saleStartLabel.id}, yaitu tanggal pendaftaran resmi
+            dibuka.
           </p>
         </div>
 
@@ -177,8 +185,8 @@ export default function IdTermsPage() {
         </div>
 
         <p className="text-xs text-navy/50">
-          Terakhir diperbarui: [tanggal akan dilengkapi saat pendaftaran
-          resmi dibuka].
+          Terakhir diperbarui: 2026-09-21 (biaya pendaftaran, struktur PG, dan
+          konfirmasi/masuk lokasi acara dikonfirmasi menjelang tinjauan PG).
         </p>
       </section>
     </main>

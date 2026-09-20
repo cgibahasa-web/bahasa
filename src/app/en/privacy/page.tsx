@@ -43,16 +43,23 @@ export default function EnPrivacyPage() {
             2. Data We Collect
           </h2>
           <p className="mt-2">
-            Registration is not yet open, so the site does not currently
-            collect registration or payment data. If you contact us by
-            email, we receive your name, email address, and message content.
+            If you contact us by email, we receive your name, email address,
+            and message content.
           </p>
           <p className="mt-2">
-            Once registration opens, this site will collect: name, contact
-            number, email address, country of residence, home
-            church/organization, registration type (individual/group), and
-            payment status. Payment card information (such as card numbers)
-            is not stored by this site — it is processed directly by a
+            The registration form on the Registration page collects: full
+            name, email address, phone/WhatsApp number, country of
+            residence, and home church/organization (optional for
+            individual registration). For group registration, the form also
+            collects the group/church name, number of participants, and a
+            list of all participant names in the group. Because the payment
+            system integration is not yet active, information you enter
+            into the form is currently only held temporarily in your
+            browser and is not sent to any server or third party. Once the
+            payment system becomes active on {eventFacts.saleStartLabel.en},
+            that data will be sent and processed as described in this
+            section. Payment card information (such as card numbers) will
+            not be stored by this site — it is processed directly by a
             third-party payment gateway.
           </p>
         </div>
@@ -76,9 +83,10 @@ export default function EnPrivacyPage() {
           <p className="mt-2">
             For payment processing, relevant registration information (name,
             payment amount, and related transaction data) is shared with
-            PortOne and its connected payment gateway (PG) providers. This
-            site does not share your personal data with any other third
-            party beyond this purpose.
+            PortOne as the payment gateway (PG), which for Indonesian local
+            payment methods (GoPay, OVO, and others) connects to Midtrans as
+            the local payment processor. This site does not share your
+            personal data with any other third party beyond this purpose.
           </p>
         </div>
 
@@ -139,8 +147,8 @@ export default function EnPrivacyPage() {
         </div>
 
         <p className="text-xs text-navy/50">
-          Last updated: [date to be added once this policy is formally
-          approved].
+          Last updated: 2026-09-21 (data collected on the registration form
+          and payment service providers confirmed ahead of PG review).
         </p>
       </section>
     </main>

@@ -50,16 +50,22 @@ export default function IdPrivacyPage() {
             2. Data yang Dikumpulkan
           </h2>
           <p className="mt-2">
-            Pada tahap saat ini, pendaftaran belum dibuka sehingga situs belum
-            mengumpulkan data pendaftaran atau pembayaran. Jika Anda
-            menghubungi kami melalui email, kami menerima nama, alamat email,
-            dan isi pesan yang Anda kirimkan.
+            Jika Anda menghubungi kami melalui email, kami menerima nama,
+            alamat email, dan isi pesan yang Anda kirimkan.
           </p>
           <p className="mt-2">
-            Saat pendaftaran dibuka, situs ini akan mengumpulkan: nama,
-            nomor kontak, alamat email, negara domisili, gereja/lembaga
-            asal, jenis pendaftaran (individu/kelompok), dan status
-            pembayaran. Informasi kartu pembayaran (nomor kartu, dll.) tidak
+            Formulir pendaftaran di halaman Pendaftaran mengumpulkan: nama
+            lengkap, alamat email, nomor telepon/WhatsApp, negara domisili,
+            dan gereja/lembaga asal (opsional untuk pendaftaran individu).
+            Untuk pendaftaran kelompok, formulir juga mengumpulkan nama
+            kelompok/gereja, jumlah peserta, dan daftar nama seluruh peserta
+            dalam kelompok tersebut. Karena integrasi sistem pembayaran
+            belum aktif, data yang Anda masukkan pada formulir saat ini
+            hanya tersimpan sementara di peramban (browser) Anda dan tidak
+            dikirim ke server atau pihak mana pun. Setelah sistem pembayaran
+            aktif pada {eventFacts.saleStartLabel.id}, data tersebut akan
+            dikirim dan diproses sebagaimana dijelaskan di bagian ini.
+            Informasi kartu pembayaran (nomor kartu, dll.) tidak akan
             disimpan oleh situs ini — data tersebut diproses langsung oleh
             penyedia layanan pembayaran (Payment Gateway) pihak ketiga.
           </p>
@@ -85,9 +91,11 @@ export default function IdPrivacyPage() {
           <p className="mt-2">
             Untuk pemrosesan pembayaran, informasi pendaftaran yang relevan
             (nama, jumlah pembayaran, dan data transaksi terkait) dibagikan
-            kepada PortOne dan penyedia layanan pembayaran (PG) yang
-            terhubung dengannya. Situs ini tidak membagikan data pribadi
-            Anda kepada pihak ketiga lain di luar keperluan tersebut.
+            kepada PortOne selaku penyedia layanan pembayaran (PG), yang
+            untuk metode pembayaran lokal Indonesia (GoPay, OVO, dan
+            lainnya) terhubung dengan Midtrans sebagai penyedia pemrosesan
+            pembayaran lokal. Situs ini tidak membagikan data pribadi Anda
+            kepada pihak ketiga lain di luar keperluan tersebut.
           </p>
         </div>
 
@@ -150,8 +158,9 @@ export default function IdPrivacyPage() {
         </div>
 
         <p className="text-xs text-navy/50">
-          Terakhir diperbarui: [tanggal akan dilengkapi saat kebijakan ini
-          disetujui secara resmi].
+          Terakhir diperbarui: 2026-09-21 (data yang dikumpulkan pada
+          formulir pendaftaran dan penyedia layanan pembayaran dikonfirmasi
+          menjelang tinjauan PG).
         </p>
       </section>
     </main>

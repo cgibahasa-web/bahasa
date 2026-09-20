@@ -43,8 +43,8 @@ export default function EnTermsPage() {
             </li>
             <li>
               &quot;Registration Fee&quot; means the amount a participant
-              must pay to attend the event. The amount will be announced on
-              the official website before registration opens.
+              must pay to attend the event, which is {eventFacts.fee.amount}.{" "}
+              {eventFacts.fee.allInclusiveNote.en}
             </li>
             <li>
               &quot;Confirmed Registration&quot; means a registration status
@@ -83,14 +83,14 @@ export default function EnTermsPage() {
             Article 5 (Registration Fee and Payment)
           </h2>
           <p className="mt-2">
-            The registration fee amount will be announced on the official
-            website before registration opens. Payments are processed
-            through a third-party payment gateway partnered with
-            the organizer; supported credit/debit cards and Indonesian local
-            payment methods may be used. Payment information (such as card
-            numbers) is processed and stored directly by the payment
-            gateway, and this site does not store participants&apos; payment
-            card information.
+            The registration fee is {eventFacts.fee.amount}, effective from{" "}
+            {eventFacts.saleStartLabel.en}, when registration opens.{" "}
+            {eventFacts.paymentProviderNote.en} Supported credit/debit cards
+            and Indonesian local payment methods may be used. Payment
+            information (such as card numbers) is processed and stored
+            directly by the payment gateway, and this site does not store
+            participants&apos; payment card information.{" "}
+            {eventFacts.currencyNote.en}
           </p>
         </div>
 
@@ -109,7 +109,14 @@ export default function EnTermsPage() {
 
         <div>
           <h2 className="text-lg font-semibold text-navy">
-            Article 7 (Participant Obligations)
+            Article 7 (Registration Confirmation and Event Entry)
+          </h2>
+          <p className="mt-2">{eventFacts.postPaymentInfo.en}</p>
+        </div>
+
+        <div>
+          <h2 className="text-lg font-semibold text-navy">
+            Article 8 (Participant Obligations)
           </h2>
           <p className="mt-2">
             Participants are solely responsible for ensuring their own
@@ -123,7 +130,7 @@ export default function EnTermsPage() {
 
         <div>
           <h2 className="text-lg font-semibold text-navy">
-            Article 8 (Limitation of Liability)
+            Article 9 (Limitation of Liability)
           </h2>
           <p className="mt-2">
             The organizer is not liable for changes, postponement, or
@@ -137,7 +144,7 @@ export default function EnTermsPage() {
 
         <div>
           <h2 className="text-lg font-semibold text-navy">
-            Article 9 (Dispute Resolution and Jurisdiction)
+            Article 10 (Dispute Resolution and Jurisdiction)
           </h2>
           <p className="mt-2">
             Disputes arising in connection with these terms will first be
@@ -153,8 +160,9 @@ export default function EnTermsPage() {
             Supplementary Provision
           </h2>
           <p className="mt-2">
-            These terms and conditions take effect from the date official
-            registration is announced as open on this site.
+            These terms and conditions take effect from{" "}
+            {eventFacts.saleStartLabel.en}, the date official registration
+            opens.
           </p>
         </div>
 
@@ -173,7 +181,9 @@ export default function EnTermsPage() {
         </div>
 
         <p className="text-xs text-navy/50">
-          Last updated: [date to be added once official registration opens].
+          Last updated: 2026-09-21 (registration fee, PG structure, and
+          registration confirmation/event entry confirmed ahead of PG
+          review).
         </p>
       </section>
     </main>

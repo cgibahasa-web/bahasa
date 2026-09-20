@@ -8,8 +8,6 @@ export const metadata = buildMetadata({
   description: `Cancellation and refund policy for ${eventFacts.name}.`,
 });
 
-const PENDING = "This detail is still awaiting final confirmation from the finance team.";
-
 export default function EnRefundPage() {
   return (
     <main className="flex flex-1 flex-col bg-ivory text-navy">
@@ -20,41 +18,33 @@ export default function EnRefundPage() {
       <section className="mx-auto w-full max-w-2xl space-y-8 px-6 py-14 text-sm leading-relaxed text-navy/80 sm:px-10 sm:text-base">
         <div className="rounded-lg border border-gold/40 bg-gold/10 px-4 py-3 text-xs text-navy/70 sm:text-sm">
           This page explains the cancellation and refund policy for{" "}
-          {eventFacts.name}. Items marked &quot;{PENDING}&quot; are still
-          awaiting final sign-off from the finance team.
+          {eventFacts.name}.
         </div>
 
         <div>
           <h2 className="text-lg font-semibold text-navy">
-            1. Early Bird Discount
-          </h2>
-          <p className="mt-2">{PENDING}</p>
-        </div>
-
-        <div>
-          <h2 className="text-lg font-semibold text-navy">
-            2. Full Refund Deadline
+            1. Full Refund Deadline
           </h2>
           <p className="mt-2">{eventFacts.refundPolicy.en}</p>
         </div>
 
         <div>
           <h2 className="text-lg font-semibold text-navy">
-            3. Registration Deadline
+            2. Registration Deadline
           </h2>
           <p className="mt-2">
             The registration deadline is {eventFacts.registrationDeadline.en}
-            , the same date as the full refund deadline in Section 2.
+            , the same date as the full refund deadline in Section 1.
           </p>
         </div>
 
         <div>
           <h2 className="text-lg font-semibold text-navy">
-            4. Refunds for Visa Denial
+            3. Refunds for Visa Denial
           </h2>
           <p className="mt-2">
             Cancellations due to visa denial follow the general refund
-            policy in Section 2: requests submitted before the deadline
+            policy in Section 1: requests submitted before the deadline
             still receive a 100% refund, while requests submitted after the
             deadline are non-refundable, including in cases of visa denial.
           </p>
@@ -62,7 +52,7 @@ export default function EnRefundPage() {
 
         <div>
           <h2 className="text-lg font-semibold text-navy">
-            5. Refunds for Event Cancellation
+            4. Refunds for Event Cancellation
           </h2>
           <p className="mt-2">
             If the event is fully cancelled by the organizer,{" "}
@@ -75,24 +65,46 @@ export default function EnRefundPage() {
 
         <div>
           <h2 className="text-lg font-semibold text-navy">
-            6. How to Request a Refund and Processing Time
+            5. If the Event Is Postponed
+          </h2>
+          <p className="mt-2">{eventFacts.eventPostponementPolicy.en}</p>
+        </div>
+
+        <div>
+          <h2 className="text-lg font-semibold text-navy">
+            6. Duplicate Payments
+          </h2>
+          <p className="mt-2">{eventFacts.duplicatePaymentPolicy.en}</p>
+        </div>
+
+        <div>
+          <h2 className="text-lg font-semibold text-navy">
+            7. How to Request a Refund, Processing Time, and Refund Method
           </h2>
           <p className="mt-2">
-            Refund requests can be submitted by contacting{" "}
+            To request a refund, email{" "}
             <a
               href={`mailto:${organizer.email}`}
               className="underline underline-offset-4"
             >
               {organizer.email}
             </a>{" "}
-            no later than {eventFacts.registrationDeadline.en}. Processing
-            time: {PENDING}
+            with your name, registration date, amount paid, and the reason
+            for the refund, no later than{" "}
+            {eventFacts.registrationDeadline.en}.
+          </p>
+          <p className="mt-2">
+            Processing time: {eventFacts.refundProcessingTime.en}.
+          </p>
+          <p className="mt-2">
+            Refund method: {eventFacts.refundMethod.en}.
           </p>
         </div>
 
         <p className="text-xs text-navy/50">
-          Last updated: 2026-09-20 (refund deadline confirmed as one month
-          before the event).
+          Last updated: 2026-09-21 (refund request method, processing time,
+          refund method, event postponement, and duplicate payment handling
+          added ahead of PG review).
         </p>
       </section>
     </main>

@@ -27,13 +27,13 @@ export default function IdParticipantGuidePage() {
             Biaya Pendaftaran
           </h2>
           <p className="mt-3 text-3xl font-bold text-brand-red sm:text-4xl">
-            {eventFacts.fee.pending.id}
+            {eventFacts.fee.amount}
+          </p>
+          <p className="mt-1 text-xs text-navy/50">
+            {eventFacts.fee.allInclusiveNote.id}
           </p>
           <p className="mt-4 text-sm text-navy/70 sm:text-base">
             Batas pendaftaran: {eventFacts.registrationDeadline.id}
-          </p>
-          <p className="mt-1 text-sm text-navy/60">
-            {eventFacts.earlyBird.id}
           </p>
         </div>
       </section>

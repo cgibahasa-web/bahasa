@@ -29,9 +29,7 @@ export default function EnFaqPage() {
               className="rounded-lg border border-navy/10 bg-white px-5 py-4"
             >
               <p className="text-sm font-medium sm:text-base">{item.en}</p>
-              <p className="mt-1 text-sm text-navy/60">
-                {item.answer ? item.answer.en : "[Answer to be added soon]"}
-              </p>
+              <p className="mt-1 text-sm text-navy/60">{item.answer.en}</p>
             </li>
           ))}
         </ul>
