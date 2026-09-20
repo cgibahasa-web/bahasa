@@ -1,4 +1,10 @@
-import { eventFacts } from "@/content/event";
+import Image from "next/image";
+import {
+  cgiIntro,
+  eventFacts,
+  welcomeMessage,
+  welcomeMessageAuthor,
+} from "@/content/event";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
@@ -30,19 +36,41 @@ export default function IdAboutPage() {
       <section className="mx-auto w-full max-w-3xl px-6 pb-14 sm:px-10">
         <h2 className="text-lg font-semibold sm:text-xl">Tentang CGI</h2>
         <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
-          Konferensi ini diselenggarakan oleh {eventFacts.host}. [Profil dan
-          sejarah singkat {eventFacts.host} akan segera dilengkapi.]
-        </p>
-      </section>
-
-      <section className="mx-auto w-full max-w-3xl px-6 pb-14 sm:px-10">
-        <h2 className="text-lg font-semibold sm:text-xl">Sambutan</h2>
-        <p className="mt-3 text-sm leading-relaxed text-navy/70 sm:text-base">
-          [Sambutan dari panitia penyelenggara akan segera dilengkapi.]
+          {cgiIntro.id}
         </p>
       </section>
 
       <section className="bg-navy/5 px-6 py-14 sm:px-10">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-lg font-semibold sm:text-xl">Sambutan</h2>
+          <div className="mt-6 flex flex-col gap-6 sm:flex-row">
+            <div className="mx-auto w-40 shrink-0 sm:mx-0">
+              <div className="relative aspect-3/4 overflow-hidden rounded-lg bg-navy/10">
+                <Image
+                  src={welcomeMessageAuthor.photo}
+                  alt={welcomeMessageAuthor.name}
+                  fill
+                  sizes="160px"
+                  className="object-cover"
+                />
+              </div>
+              <p className="mt-2 text-center text-sm font-semibold text-navy sm:text-left">
+                {welcomeMessageAuthor.name}
+              </p>
+              <p className="text-center text-xs text-navy/60 sm:text-left">
+                {welcomeMessageAuthor.title.id}
+              </p>
+            </div>
+            <div className="space-y-3 text-sm leading-relaxed text-navy/70 sm:text-base">
+              {welcomeMessage.id.split("\n\n").map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-14 sm:px-10">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-lg font-semibold sm:text-xl">
             Peserta yang Dituju

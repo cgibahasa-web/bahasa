@@ -125,8 +125,35 @@ export const organizer = {
   },
 } as const;
 
+// Sourced from cgikorea.kr (fetched 2026-09-21) — see
+// content-source/01-official-facts/cgi-and-welcome-message.md for the
+// research notes and provenance.
+export const cgiIntro = {
+  id: "Church Growth International (CGI) didirikan pada tahun 1976 di bawah kepemimpinan visioner (Alm.) Dr. David Yonggi Cho, dengan komitmen yang mendalam terhadap pelayanan Roh Kudus, pertumbuhan gereja yang sehat, dan misi dunia. Selama hampir 50 tahun, CGI telah setia melayani gereja-gereja di berbagai negara dengan menjaga esensi Injil, memperlengkapi para pemimpin, dan memajukan misi Allah di antara bangsa-bangsa — melalui konferensi internasional tahunan, pengarsipan materi konferensi, dan penerbitan majalah pertumbuhan gereja. CGI saat ini dipimpin oleh Ketua Dr. Lee Young Hoon, Gembala Senior Yoido Full Gospel Church.",
+  en: "Church Growth International (CGI) was founded in 1976 under the visionary leadership of the late Dr. David Yonggi Cho, with a deep commitment to the ministry of the Holy Spirit, healthy church growth, and world missions. For nearly 50 years, CGI has faithfully served churches around the world by preserving the essence of the Gospel, empowering leaders, and advancing God's mission among the nations — through an annual international conference, archiving past conference materials, and publishing a church growth magazine. CGI is currently led by Chairman Dr. Lee Young Hoon, Senior Pastor of Yoido Full Gospel Church.",
+} as const;
+
+// DRAFT — written to expand on eventFacts.purpose for the About page's
+// welcome-message section. This has NOT been reviewed or approved by
+// Rev. Lee Young Hoon or CGI leadership; it must be signed off before it
+// is presented publicly as his own words. Swap in the real text once
+// provided. See content-source/01-official-facts/cgi-and-welcome-message.md.
+export const welcomeMessage = {
+  id: "Salam sejahtera dalam kasih Tuhan Yesus Kristus.\n\nDengan sukacita besar, saya mengundang Saudara-saudari sekalian untuk turut ambil bagian dalam 2027 CGI BAHASA Conference di Osanri Prayer Mountain, Korea. Sejak didirikan pada tahun 1976, Church Growth International (CGI) telah setia melayani gereja-gereja di banyak negara dengan menjaga esensi Injil, memperlengkapi para pemimpin, dan memajukan misi Allah di antara bangsa-bangsa melalui kuasa Roh Kudus.\n\nKonferensi ini lahir dari kerinduan untuk membagikan spiritualitas Injil Sepenuh (Full Gospel) — sebuah iman yang hidup dalam kuasa Roh Kudus, pemulihan, dan pengharapan — kepada jemaat-jemaat Indonesia, baik yang berada di dalam maupun luar negeri. Kami percaya bahwa melalui doa bersama, firman Tuhan, dan persekutuan selama empat hari ini, akan lahir kebangunan rohani yang baru bagi penginjilan di Indonesia, sekaligus mempererat pertukaran rohani antara gereja-gereja di Korea dan Indonesia bagi kemuliaan nama Tuhan.\n\nSaya menantikan kehadiran Saudara-saudari sekalian, dan berdoa agar konferensi ini menjadi 'Kebangkitan Baru, Api yang Sama' bagi kita semua.\n\nTuhan Yesus memberkati.",
+  en: "Grace and peace to you in the love of our Lord Jesus Christ.\n\nIt is with great joy that I invite you to join us at the 2027 CGI BAHASA Conference at Osanri Prayer Mountain, Korea. Since its founding in 1976, Church Growth International (CGI) has faithfully served churches in many nations by preserving the essence of the Gospel, empowering leaders, and advancing God's mission among the nations through the power of the Holy Spirit.\n\nThis conference was born out of a longing to share the spirituality of the Full Gospel — a living faith in the power of the Holy Spirit, restoration, and hope — with Indonesian congregations both at home and abroad. We believe that through four days of shared prayer, the Word of God, and fellowship, a new spiritual awakening will rise for evangelism in Indonesia, while deepening the spiritual exchange between the churches of Korea and Indonesia for the glory of God's name.\n\nI look forward to your presence, and I pray this conference will be 'A New Awakening, the Same Fire' for us all.\n\nGod bless you.",
+} as const;
+
+export const welcomeMessageAuthor = {
+  name: "Dr. Lee Young Hoon",
+  title: {
+    id: "Ketua Church Growth International (CGI) / Gembala Senior Yoido Full Gospel Church",
+    en: "Chairman, Church Growth International (CGI) / Senior Pastor, Yoido Full Gospel Church",
+  },
+  photo: "/images/about/lee-young-hoon.png",
+} as const;
+
 export const programHighlights = [
-  { id: "Doa Subuh", en: "Dawn Prayer" },
+  { id: "Doa Subuh", en: "Early Morning Prayer" },
   { id: "Seminar 1–6", en: "Seminar 1–6" },
   {
     id: "Kebaktian Kebangunan Rohani (KKR) I & II",

@@ -29,7 +29,7 @@ export const programSchedule = [
     noteEn: "Full-day fast",
     items: [
       { time: "06:00–06:30", timeEn: "06:00–06:30", id: "Pujian", en: "Worship" },
-      { time: "06:30–07:30", timeEn: "06:30–07:30", id: "Doa Subuh", en: "Dawn Prayer" },
+      { time: "06:30–07:30", timeEn: "06:30–07:30", id: "Doa Subuh", en: "Early Morning Prayer" },
       {
         time: "07:30–09:00",
         timeEn: "07:30–09:00",
@@ -82,7 +82,7 @@ export const programSchedule = [
     noteEn: "Breakfast boho-sik (post-fast recovery meal)",
     items: [
       { time: "06:00–06:30", timeEn: "06:00–06:30", id: "Pujian", en: "Worship" },
-      { time: "06:30–07:30", timeEn: "06:30–07:30", id: "Doa Subuh", en: "Dawn Prayer" },
+      { time: "06:30–07:30", timeEn: "06:30–07:30", id: "Doa Subuh", en: "Early Morning Prayer" },
       {
         time: "07:30–09:00",
         timeEn: "07:30–09:00",
@@ -140,7 +140,7 @@ export const programSchedule = [
     noteEn: null,
     items: [
       { time: "06:00–06:30", timeEn: "06:00–06:30", id: "Pujian", en: "Worship" },
-      { time: "06:30–07:30", timeEn: "06:30–07:30", id: "Doa Subuh", en: "Dawn Prayer" },
+      { time: "06:30–07:30", timeEn: "06:30–07:30", id: "Doa Subuh", en: "Early Morning Prayer" },
       { time: "07:30–09:00", timeEn: "07:30–09:00", id: "Sarapan", en: "Breakfast" },
       {
         time: "09:00–10:30",
