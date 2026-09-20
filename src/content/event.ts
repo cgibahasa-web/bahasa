@@ -126,10 +126,10 @@ export const organizer = {
 } as const;
 
 export const cgiLogo = {
-  src: "/images/brand/cgi-logo.jpg",
+  src: "/images/brand/cgi-logo.png",
   alt: "CGI — Church Growth International",
-  width: 8216,
-  height: 4654,
+  width: 664,
+  height: 376,
 } as const;
 
 // Sourced from cgikorea.kr (fetched 2026-09-21) — see
