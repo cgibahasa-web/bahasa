@@ -110,7 +110,7 @@ export const organizer = {
   },
   representative: {
     ko: "이영훈",
-    en: "Lee Young Hoon",
+    en: "Younghoon Lee",
   },
   registrationNumber: "609-82-84201",
   address: {
@@ -136,13 +136,13 @@ export const cgiLogo = {
 // content-source/01-official-facts/cgi-and-welcome-message.md for the
 // research notes and provenance.
 export const cgiIntro = {
-  id: "Church Growth International (CGI) didirikan pada tahun 1976 di bawah kepemimpinan visioner (Alm.) Dr. David Yonggi Cho, dengan komitmen yang mendalam terhadap pelayanan Roh Kudus, pertumbuhan gereja yang sehat, dan misi dunia. Selama hampir 50 tahun, CGI telah setia melayani gereja-gereja di berbagai negara dengan menjaga esensi Injil, memperlengkapi para pemimpin, dan memajukan misi Allah di antara bangsa-bangsa — melalui konferensi internasional tahunan, pengarsipan materi konferensi, dan penerbitan majalah pertumbuhan gereja. CGI saat ini dipimpin oleh Ketua Dr. Lee Young Hoon, Gembala Senior Yoido Full Gospel Church.",
-  en: "Church Growth International (CGI) was founded in 1976 under the visionary leadership of the late Dr. David Yonggi Cho, with a deep commitment to the ministry of the Holy Spirit, healthy church growth, and world missions. For nearly 50 years, CGI has faithfully served churches around the world by preserving the essence of the Gospel, empowering leaders, and advancing God's mission among the nations — through an annual international conference, archiving past conference materials, and publishing a church growth magazine. CGI is currently led by Chairman Dr. Lee Young Hoon, Senior Pastor of Yoido Full Gospel Church.",
+  id: "Church Growth International (CGI) didirikan pada tahun 1976 di bawah kepemimpinan visioner (Alm.) Dr. David Yonggi Cho, dengan komitmen yang mendalam terhadap pelayanan Roh Kudus, pertumbuhan gereja yang sehat, dan misi dunia. Selama hampir 50 tahun, CGI telah setia melayani gereja-gereja di berbagai negara dengan menjaga esensi Injil, memperlengkapi para pemimpin, dan memajukan misi Allah di antara bangsa-bangsa — melalui konferensi internasional tahunan, pengarsipan materi konferensi, dan penerbitan majalah pertumbuhan gereja. CGI saat ini dipimpin oleh Ketua Dr. Younghoon Lee, Gembala Senior Yoido Full Gospel Church.",
+  en: "Church Growth International (CGI) was founded in 1976 under the visionary leadership of the late Dr. David Yonggi Cho, with a deep commitment to the ministry of the Holy Spirit, healthy church growth, and world missions. For nearly 50 years, CGI has faithfully served churches around the world by preserving the essence of the Gospel, empowering leaders, and advancing God's mission among the nations — through an annual international conference, archiving past conference materials, and publishing a church growth magazine. CGI is currently led by Chairman Dr. Younghoon Lee, Senior Pastor of Yoido Full Gospel Church.",
 } as const;
 
 // DRAFT — written to expand on eventFacts.purpose for the About page's
 // welcome-message section. This has NOT been reviewed or approved by
-// Rev. Lee Young Hoon or CGI leadership; it must be signed off before it
+// Rev. Younghoon Lee or CGI leadership; it must be signed off before it
 // is presented publicly as his own words. Swap in the real text once
 // provided. See content-source/01-official-facts/cgi-and-welcome-message.md.
 export const welcomeMessage = {
@@ -151,7 +151,7 @@ export const welcomeMessage = {
 } as const;
 
 export const welcomeMessageAuthor = {
-  name: "Dr. Lee Young Hoon",
+  name: "Dr. Younghoon Lee",
   title: {
     id: "Ketua Church Growth International (CGI) / Gembala Senior Yoido Full Gospel Church",
     en: "Chairman, Church Growth International (CGI) / Senior Pastor, Yoido Full Gospel Church",

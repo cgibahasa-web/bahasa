@@ -23,7 +23,7 @@ PortOne(포트원) 크로스보더로 인도네시아 GoPay/OVO 등 현지 결�
 
 ```
 주최(Penyelenggara): 국제교회성장연구원(CGI) / International Church Growth Institute (CGI)
-대표자(Direktur): 이영훈 (Lee Young Hoon)
+대표자(Direktur): 이영훈 (Dr. Younghoon Lee) — 영문 표기 2026-09-21 확정 (기존 "Lee Young Hoon"에서 변경)
 고유번호(No. Registrasi): 609-82-84201
 소재지(Alamat): 서울특별시 마포구 서강로 19, 3층(신정동), Republic of Korea
 문의(Kontak): cgibahasa@gmail.com
