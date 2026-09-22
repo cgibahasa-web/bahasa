@@ -55,7 +55,7 @@ export default function EnAboutPage() {
           </h2>
           <div className="mt-6 flex flex-col gap-6 sm:flex-row">
             <div className="mx-auto w-40 shrink-0 sm:mx-0">
-              <div className="relative aspect-3/4 overflow-hidden rounded-lg bg-navy/10">
+              <div className="relative aspect-square overflow-hidden rounded-lg bg-navy/10">
                 <Image
                   src={welcomeMessageAuthor.photo}
                   alt={welcomeMessageAuthor.name}
