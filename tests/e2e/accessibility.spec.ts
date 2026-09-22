@@ -29,7 +29,7 @@ for (const route of allRoutes) {
 test("home pages expose a labelled main navigation landmark", async ({
   page,
 }) => {
-  await page.goto("/id");
+  await page.goto("/");
   await expect(page.getByRole("navigation", { name: "Navigasi utama" })).toBeVisible();
 
   await page.goto("/en");

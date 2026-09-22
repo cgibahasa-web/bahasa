@@ -15,7 +15,7 @@ export default function NotFound() {
       </p>
       <div className="mt-2 flex flex-col items-center gap-3 sm:flex-row">
         <Link
-          href="/id"
+          href="/"
           className="rounded-full bg-navy px-8 py-3 text-sm font-semibold text-ivory transition-colors hover:bg-navy/90 sm:text-base"
         >
           Kembali ke Beranda

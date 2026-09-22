@@ -15,5 +15,5 @@ export const paths = [
 export const locales = ["id", "en"] as const;
 
 export const allRoutes = locales.flatMap((locale) =>
-  paths.map((path) => `/${locale}${path}`),
+  paths.map((path) => (locale === "id" ? path || "/" : `/en${path}`)),
 );

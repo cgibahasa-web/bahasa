@@ -91,7 +91,7 @@ export default function IdHomePage() {
 
         <div className="mt-10 flex flex-col items-center gap-3">
           <Link
-            href="/id/registration"
+            href="/registration"
             className="rounded-full bg-gold px-10 py-4 text-base font-bold text-navy-deep shadow-lg shadow-navy-deep/40 transition-colors hover:bg-gold/90 sm:text-lg"
           >
             Daftar Sekarang
@@ -147,7 +147,7 @@ export default function IdHomePage() {
           </ul>
           <div className="mt-8 text-center">
             <Link
-              href="/id/program"
+              href="/program"
               className="text-sm font-medium text-gold underline underline-offset-4"
             >
               Lihat Program Lengkap
@@ -247,7 +247,7 @@ export default function IdHomePage() {
           </ul>
           <div className="mt-6 text-center">
             <Link
-              href="/id/faq"
+              href="/faq"
               className="text-sm font-medium text-navy underline underline-offset-4"
             >
               Lihat semua FAQ
@@ -266,7 +266,7 @@ export default function IdHomePage() {
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
-            href="/id/registration"
+            href="/registration"
             className="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-navy-deep transition-colors hover:bg-gold/90 sm:text-base"
           >
             Daftar Sekarang

@@ -34,7 +34,7 @@ test("no broken internal links across the site", async ({ page, request }) => {
 });
 
 test("unknown routes render the branded 404 page", async ({ page }) => {
-  const response = await page.goto("/id/this-page-does-not-exist");
+  const response = await page.goto("/this-page-does-not-exist");
   expect(response?.status()).toBe(404);
   await expect(page.getByText("Halaman tidak ditemukan")).toBeVisible();
 });

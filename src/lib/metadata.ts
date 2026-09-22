@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { eventFacts } from "@/content/event";
+import { localePath } from "@/lib/locale";
 
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://bahasa-nu.vercel.app";
@@ -21,7 +22,9 @@ export function buildMetadata({
   /** skip the root layout's title template, e.g. for the home page */
   absoluteTitle?: boolean;
 }): Metadata {
-  const url = `${siteUrl}/${locale}${path}`;
+  const idUrl = `${siteUrl}${localePath("id", path)}`;
+  const enUrl = `${siteUrl}${localePath("en", path)}`;
+  const url = locale === "id" ? idUrl : enUrl;
 
   return {
     title: absoluteTitle ? { absolute: title } : title,
@@ -29,8 +32,9 @@ export function buildMetadata({
     alternates: {
       canonical: url,
       languages: {
-        id: `${siteUrl}/id${path}`,
-        en: `${siteUrl}/en${path}`,
+        id: idUrl,
+        en: enUrl,
+        "x-default": idUrl,
       },
     },
     openGraph: {

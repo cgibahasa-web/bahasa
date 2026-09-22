@@ -7,7 +7,7 @@ test("id homepage loads and paints quickly on a production build", async ({
   page,
 }) => {
   const start = Date.now();
-  await page.goto("/id", { waitUntil: "load" });
+  await page.goto("/", { waitUntil: "load" });
   const loadMs = Date.now() - start;
 
   const metrics = await page.evaluate(() => {

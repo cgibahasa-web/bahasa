@@ -8,6 +8,7 @@ import {
   feeInclusions,
   organizer,
 } from "@/content/event";
+import { localePath } from "@/lib/locale";
 
 type Locale = "id" | "en";
 type RegistrationType = "individual" | "group";
@@ -412,14 +413,14 @@ export function RegistrationWizard({
             <span>
               {t("Saya menyetujui ", "I agree to the ")}
               <Link
-                href={`/${locale}/terms`}
+                href={localePath(locale, "/terms")}
                 className="underline underline-offset-4"
               >
                 {t("Syarat & Ketentuan", "Terms & Conditions")}
               </Link>
               {t(" dan ", " and ")}
               <Link
-                href={`/${locale}/refund`}
+                href={localePath(locale, "/refund")}
                 className="underline underline-offset-4"
               >
                 {t("Kebijakan Pengembalian Dana", "Refund Policy")}

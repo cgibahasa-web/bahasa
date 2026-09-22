@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { cgiLogo, eventFacts, organizer } from "@/content/event";
+import { localePath } from "@/lib/locale";
 
 const footerCopy = {
   id: {
@@ -69,19 +70,19 @@ export function SiteFooter({ locale }: { locale: "id" | "en" }) {
 
       <div className="mt-4 flex flex-wrap justify-center gap-4">
         <Link
-          href={`/${locale}/terms`}
+          href={localePath(locale, "/terms")}
           className="underline underline-offset-4"
         >
           {t.terms}
         </Link>
         <Link
-          href={`/${locale}/privacy`}
+          href={localePath(locale, "/privacy")}
           className="underline underline-offset-4"
         >
           {t.privacy}
         </Link>
         <Link
-          href={`/${locale}/refund`}
+          href={localePath(locale, "/refund")}
           className="underline underline-offset-4"
         >
           {t.refund}
