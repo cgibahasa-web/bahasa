@@ -10,3 +10,4 @@
 - 실제 개인정보(여권, 카드번호, 실명 참가자 정보)는 개발 중 절대 사용하지 않는다. 가상 데이터만 사용.
 - 비밀키(PortOne/Midtrans Server Key 등)는 코드/커밋/대화에 남기지 않고 .env.local 에만 저장한다.
 - 일정·금액·정책이 바뀌면 코드가 아니라 content-source의 원본 파일부터 고친다.
+- 배포(2026-09-23~): `main` 브랜치에 push되면 GitHub Actions(`.github/workflows/deploy.yml`)가 자동으로 `npm run deploy`(OpenNext Cloudflare build + wrangler deploy)를 실행해 Cloudflare Workers("bahasa")에 반영한다. GitHub 저장소 Secrets에 `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`가 등록되어 있어야 동작한다. 즉 로컬에서 커밋만 하고 origin에 push하지 않으면 실제 사이트에는 반영되지 않는다 — 코드 수정 작업을 완료했다면 커밋 후 `git push`까지 해야 배포로 이어진다.
