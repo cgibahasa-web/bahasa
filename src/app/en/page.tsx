@@ -96,7 +96,7 @@ export default function EnHomePage() {
             href="/en/registration"
             className="rounded-full bg-gold px-10 py-4 text-base font-bold text-navy-deep shadow-lg shadow-navy-deep/40 transition-colors hover:bg-gold/90 sm:text-lg"
           >
-            Register Now
+            Register Here
           </Link>
           <p className="hero-text-shadow text-xs text-ivory/80 sm:text-sm">
             {isSaleOpen
@@ -273,7 +273,7 @@ export default function EnHomePage() {
             href="/en/registration"
             className="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-navy-deep transition-colors hover:bg-gold/90 sm:text-base"
           >
-            Register Now
+            Register Here
           </Link>
           <a
             href={`mailto:${eventFacts.contactEmail}`}

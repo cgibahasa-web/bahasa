@@ -30,7 +30,7 @@ export const faqItems = [
     en: "How do I register?",
     answer: {
       id: `Klik tombol "Daftar Sekarang", lalu ikuti 4 langkah: pilih jenis pendaftaran, isi data peserta, periksa ringkasan pesanan dan biaya, kemudian selesaikan pembayaran. Pendaftaran dibuka mulai ${eventFacts.saleStartLabel.id}.`,
-      en: `Click "Register Now" and follow the 4 steps: select your registration type, fill in your participant details, review the order and fee summary, then complete payment. Registration opens ${eventFacts.saleStartLabel.en}.`,
+      en: `Click "Register Here" and follow the 4 steps: select your registration type, fill in your participant details, review the order and fee summary, then complete payment. Registration opens ${eventFacts.saleStartLabel.en}.`,
     },
   },
   {
