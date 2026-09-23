@@ -118,6 +118,7 @@ export const organizer = {
     en: "3F, 19 Seogang-ro, Mapo-gu, Seoul, Republic of Korea",
   },
   email: "cgibahasa@gmail.com",
+  phone: "02-6181-5037",
   dataProtectionOfficer: "Joseph Lee",
   dataRetentionPeriod: {
     id: "1 tahun setelah acara berakhir",

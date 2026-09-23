@@ -14,6 +14,7 @@ const footerCopy = {
     registration: "No. Registrasi",
     address: "Alamat",
     contact: "Kontak",
+    phone: "Telepon",
   },
   en: {
     rights: "All rights reserved.",
@@ -25,6 +26,7 @@ const footerCopy = {
     registration: "Registration No.",
     address: "Address",
     contact: "Contact",
+    phone: "Phone",
   },
 } as const;
 
@@ -56,6 +58,15 @@ export function SiteFooter({ locale }: { locale: "id" | "en" }) {
         </p>
         <p>
           {t.address}: {organizer.address.ko}, Republic of Korea
+        </p>
+        <p>
+          {t.phone}:{" "}
+          <a
+            href={`tel:+82${organizer.phone.replace(/-/g, "").replace(/^0/, "")}`}
+            className="underline underline-offset-4"
+          >
+            {organizer.phone}
+          </a>
         </p>
         <p>
           {t.contact}:{" "}
