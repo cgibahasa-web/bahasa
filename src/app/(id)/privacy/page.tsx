@@ -1,5 +1,6 @@
 import { eventFacts, organizer } from "@/content/event";
 import { buildMetadata } from "@/lib/metadata";
+import { KoreanComplianceNotice } from "@/components/KoreanComplianceNotice";
 
 export const metadata = buildMetadata({
   locale: "id",
@@ -22,6 +23,8 @@ export default function IdPrivacyPage() {
           Kebijakan ini menjelaskan bagaimana situs {eventFacts.name}{" "}
           mengelola data pengunjung dan peserta.
         </p>
+
+        <KoreanComplianceNotice page="privacy" />
 
         <div>
           <h2 className="text-lg font-semibold text-navy">

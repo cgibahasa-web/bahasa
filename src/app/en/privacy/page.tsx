@@ -1,5 +1,6 @@
 import { eventFacts, organizer } from "@/content/event";
 import { buildMetadata } from "@/lib/metadata";
+import { KoreanComplianceNotice } from "@/components/KoreanComplianceNotice";
 
 export const metadata = buildMetadata({
   locale: "en",
@@ -20,6 +21,8 @@ export default function EnPrivacyPage() {
           This policy explains how the {eventFacts.name} website handles
           visitor and participant data.
         </p>
+
+        <KoreanComplianceNotice page="privacy" />
 
         <div>
           <h2 className="text-lg font-semibold text-navy">1. Organizer</h2>

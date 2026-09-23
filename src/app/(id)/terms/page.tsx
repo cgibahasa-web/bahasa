@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { eventFacts, organizer } from "@/content/event";
 import { buildMetadata } from "@/lib/metadata";
+import { KoreanComplianceNotice } from "@/components/KoreanComplianceNotice";
 
 export const metadata = buildMetadata({
   locale: "id",
@@ -19,6 +20,8 @@ export default function IdTermsPage() {
       </section>
 
       <section className="mx-auto w-full max-w-2xl space-y-8 px-6 py-14 text-sm leading-relaxed text-navy/80 sm:px-10 sm:text-base">
+        <KoreanComplianceNotice page="terms" />
+
         <div>
           <h2 className="text-lg font-semibold text-navy">Pasal 1 (Tujuan)</h2>
           <p className="mt-2">

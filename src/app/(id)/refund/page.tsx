@@ -1,5 +1,6 @@
 import { eventFacts, organizer } from "@/content/event";
 import { buildMetadata } from "@/lib/metadata";
+import { KoreanComplianceNotice } from "@/components/KoreanComplianceNotice";
 
 export const metadata = buildMetadata({
   locale: "id",
@@ -22,6 +23,8 @@ export default function IdRefundPage() {
           Halaman ini menjelaskan kebijakan pembatalan dan pengembalian dana
           untuk {eventFacts.name}.
         </div>
+
+        <KoreanComplianceNotice page="refund" />
 
         <div>
           <h2 className="text-lg font-semibold text-navy">
