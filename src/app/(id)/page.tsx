@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import HeroVideoBackground from "@/components/HeroVideoBackground";
 import {
   eventFacts,
   feeExclusions,
   feeInclusions,
-  heroImage,
   venuePhotos,
 } from "@/content/event";
 import { faqItems } from "@/content/faq";
@@ -52,13 +52,9 @@ export default function IdHomePage() {
     <main className="flex flex-1 flex-col bg-ivory text-navy">
       {/* 1. Hero: 행사명, 주제, 날짜, 장소, 주 행동 버튼 */}
       <section className="relative isolate flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-24 text-center text-ivory sm:px-10">
-        <Image
-          src={heroImage.src}
-          alt={heroImage.alt.id}
-          fill
-          priority
-          sizes="100vw"
-          className="-z-20 object-cover"
+        <HeroVideoBackground
+          videoId="aPiU8wo36cs"
+          title={`${eventFacts.name} — video`}
         />
         <div className="absolute inset-0 -z-10 bg-linear-to-t from-navy-deep/85 via-navy-deep/25 to-navy-deep/40" />
 
