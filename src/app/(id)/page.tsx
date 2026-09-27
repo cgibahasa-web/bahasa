@@ -60,7 +60,7 @@ export default function IdHomePage() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center px-6 py-16 text-center text-ivory sm:px-10 sm:py-20">
+      <section className="flex flex-col items-center bg-navy-deep px-6 py-16 text-center text-ivory sm:px-10 sm:py-20">
         <p className="rounded-full border border-gold/50 bg-navy-deep/30 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-gold sm:text-sm">
           {eventFacts.name}
         </p>
