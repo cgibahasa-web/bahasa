@@ -51,13 +51,11 @@ export default function IdHomePage() {
   return (
     <main className="flex flex-1 flex-col bg-ivory text-navy">
       {/* 1. Hero: 대형 영상 + 행사명, 주제, 날짜, 장소, 주 행동 버튼 */}
-      <section className="relative w-full overflow-hidden bg-navy-deep">
-        <div className="relative aspect-video w-full">
-          <HeroVideoBackground
-            videoId="aPiU8wo36cs"
-            title={`${eventFacts.name} — video`}
-          />
-        </div>
+      <section className="relative h-[calc(100vh-var(--site-header-height,88px))] min-h-[280px] w-full overflow-hidden bg-navy-deep">
+        <HeroVideoBackground
+          videoId="aPiU8wo36cs"
+          title={`${eventFacts.name} — video`}
+        />
       </section>
 
       <section className="flex flex-col items-center px-6 py-16 text-center text-ivory sm:px-10 sm:py-20">

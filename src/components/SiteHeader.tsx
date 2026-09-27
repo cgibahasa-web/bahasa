@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,6 +10,7 @@ import { localePath } from "@/lib/locale";
 
 export function SiteHeader({ locale }: { locale: "id" | "en" }) {
   const pathname = usePathname();
+  const headerRef = useRef<HTMLElement>(null);
   const otherLocale = locale === "id" ? "en" : "id";
   const localelessPath =
     locale === "en" ? pathname.replace(/^\/en/, "") : pathname;
@@ -21,8 +22,29 @@ export function SiteHeader({ locale }: { locale: "id" | "en" }) {
     document.documentElement.lang = locale;
   }, [locale]);
 
+  // Exposes the header's real (possibly multi-line) height as a CSS
+  // variable so the hero video below it can size itself to exactly fill
+  // the rest of the screen, on any viewport, without JS in that component.
+  useLayoutEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+    const setHeight = () => {
+      document.documentElement.style.setProperty(
+        "--site-header-height",
+        `${header.offsetHeight}px`,
+      );
+    };
+    setHeight();
+    const observer = new ResizeObserver(setHeight);
+    observer.observe(header);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <header className="sticky top-0 z-20 border-b border-navy/10 bg-ivory/95 backdrop-blur">
+    <header
+      ref={headerRef}
+      className="sticky top-0 z-20 border-b border-navy/10 bg-ivory/95 backdrop-blur"
+    >
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-3 px-6 py-4 sm:px-10">
         <Link
           href={localePath(locale)}
