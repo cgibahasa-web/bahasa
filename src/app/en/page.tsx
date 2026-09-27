@@ -52,28 +52,31 @@ export default function EnHomePage() {
 
   return (
     <main className="flex flex-1 flex-col bg-ivory text-navy">
-      {/* 1. Event name, theme, date, venue, primary CTA */}
-      <section className="relative isolate flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-24 text-center text-ivory sm:px-10">
-        <HeroVideoBackground
-          videoId="oZMKdRfflVk"
-          title={`${eventFacts.name} — video`}
-        />
-        <div className="absolute inset-0 -z-10 bg-linear-to-t from-navy-deep/85 via-navy-deep/25 to-navy-deep/40" />
+      {/* 1. Large hero video + event name, theme, date, venue, primary CTA */}
+      <section className="relative w-full overflow-hidden bg-navy-deep">
+        <div className="relative aspect-video w-full">
+          <HeroVideoBackground
+            videoId="oZMKdRfflVk"
+            title={`${eventFacts.name} — video`}
+          />
+        </div>
+      </section>
 
-        <p className="hero-text-shadow rounded-full border border-gold/50 bg-navy-deep/30 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-gold sm:text-sm">
+      <section className="flex flex-col items-center px-6 py-16 text-center text-ivory sm:px-10 sm:py-20">
+        <p className="rounded-full border border-gold/50 bg-navy-deep/30 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-gold sm:text-sm">
           {eventFacts.name}
         </p>
 
-        <h1 className="hero-text-shadow mt-6 max-w-4xl text-4xl font-extrabold leading-tight sm:text-6xl lg:text-7xl">
+        <h1 className="mt-6 max-w-4xl text-4xl font-extrabold leading-tight sm:text-6xl lg:text-7xl">
           {eventFacts.themeLines.en[0]}
           <br />
           {eventFacts.themeLines.en[1]}
         </h1>
-        <p className="hero-text-shadow mt-3 max-w-2xl text-base italic text-ivory/90 sm:text-xl">
+        <p className="mt-3 max-w-2xl text-base italic text-ivory/90 sm:text-xl">
           {eventFacts.theme.id}
         </p>
 
-        <dl className="hero-text-shadow mt-10 flex flex-col gap-2 text-base font-medium sm:flex-row sm:gap-8 sm:text-lg">
+        <dl className="mt-10 flex flex-col gap-2 text-base font-medium sm:flex-row sm:gap-8 sm:text-lg">
           <div>
             <dt className="sr-only">Date</dt>
             <dd>{eventFacts.dates.en}</dd>
@@ -94,7 +97,7 @@ export default function EnHomePage() {
           >
             Register Here
           </Link>
-          <p className="hero-text-shadow text-xs text-ivory/80 sm:text-sm">
+          <p className="text-xs text-ivory/80 sm:text-sm">
             {isSaleOpen
               ? "Registration is open"
               : `Registration opens ${eventFacts.saleStartLabel.en}`}
