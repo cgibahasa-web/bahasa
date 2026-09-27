@@ -53,11 +53,13 @@ export default function EnHomePage() {
   return (
     <main className="flex flex-1 flex-col bg-ivory text-navy">
       {/* 1. Large hero video + event name, theme, date, venue, primary CTA */}
-      <section className="relative h-[calc(100vh-var(--site-header-height,88px))] min-h-[280px] w-full overflow-hidden bg-navy-deep">
-        <HeroVideoBackground
-          videoId="oZMKdRfflVk"
-          title={`${eventFacts.name} — video`}
-        />
+      <section className="flex h-[calc(100vh-var(--site-header-height,88px))] min-h-[280px] w-full items-center justify-center overflow-hidden bg-navy-deep">
+        <div className="relative aspect-video w-[min(100%,calc((100vh-var(--site-header-height,88px))*16/9))]">
+          <HeroVideoBackground
+            videoId="oZMKdRfflVk"
+            title={`${eventFacts.name} — video`}
+          />
+        </div>
       </section>
 
       <section className="flex flex-col items-center px-6 py-16 text-center text-ivory sm:px-10 sm:py-20">
