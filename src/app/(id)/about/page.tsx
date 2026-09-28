@@ -59,7 +59,7 @@ export default function IdAboutPage() {
                   alt={welcomeMessageAuthor.name}
                   fill
                   sizes="160px"
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
               <p className="mt-2 text-center text-sm font-semibold text-navy sm:text-left">
@@ -73,6 +73,12 @@ export default function IdAboutPage() {
               {welcomeMessage.id.split("\n\n").map((paragraph, i) => (
                 <p key={i}>{paragraph}</p>
               ))}
+              <p className="pt-3 text-right font-semibold text-navy">
+                {welcomeMessageAuthor.name}
+                <span className="block text-sm font-normal text-navy/60">
+                  {welcomeMessageAuthor.title.id}
+                </span>
+              </p>
             </div>
           </div>
         </div>

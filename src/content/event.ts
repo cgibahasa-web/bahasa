@@ -157,7 +157,7 @@ export const welcomeMessageAuthor = {
     id: "Ketua Church Growth International (CGI) / Gembala Senior Yoido Full Gospel Church",
     en: "Chairman, Church Growth International (CGI) / Senior Pastor, Yoido Full Gospel Church",
   },
-  photo: "/images/about/lee-young-hoon-v2.png",
+  photo: "/images/about/lee-young-hoon-v3.png",
 } as const;
 
 export const programHighlights = [
