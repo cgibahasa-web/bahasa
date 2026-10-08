@@ -28,3 +28,16 @@ bucket_name = "bahasa-opennext-cache"
 # https://opennext.js.org/cloudflare/howtos/image
 [images]
 binding = "IMAGES"
+
+# Custom Domains — cgibahasa.com was purchased via Cloudflare Registrar and
+# its nameservers already point at Cloudflare. These entries make the zone's
+# apex and www serve this Worker directly (Cloudflare auto-provisions the
+# DNS record + SSL cert on deploy). Needed for PortOne PG review, which
+# requires a real domain instead of the *.workers.dev subdomain.
+[[routes]]
+pattern = "cgibahasa.com"
+custom_domain = true
+
+[[routes]]
+pattern = "www.cgibahasa.com"
+custom_domain = true
