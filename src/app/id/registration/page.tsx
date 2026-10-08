@@ -1,7 +1,7 @@
 import { eventFacts, feeExclusions, feeInclusions } from "@/content/event";
 import { buildMetadata } from "@/lib/metadata";
 import { isPaymentConfigured } from "@/lib/payment";
-import { isSaleOpen } from "@/lib/sale";
+import { isPreviewUnlocked, isSaleOpen } from "@/lib/sale";
 import { RegistrationWizard } from "@/components/RegistrationWizard";
 
 export const metadata = buildMetadata({
@@ -11,12 +11,14 @@ export const metadata = buildMetadata({
   description: `Pendaftaran ${eventFacts.name}.`,
 });
 
-// Re-checks the sale window on every request instead of baking the answer
-// into a statically generated page at build time.
-export const revalidate = 3600;
+export default async function IdRegistrationPage({
+  searchParams,
+}: PageProps<"/id/registration">) {
+  const { preview } = await searchParams;
+  const previewToken = Array.isArray(preview) ? preview[0] : preview;
+  const showWizard = isSaleOpen() || isPreviewUnlocked(previewToken);
 
-export default function IdRegistrationPage() {
-  if (!isSaleOpen()) {
+  if (!showWizard) {
     return (
       <main className="flex flex-1 flex-col items-center justify-center gap-4 bg-ivory px-6 py-24 text-center text-navy">
         <p className="text-sm font-medium text-navy/60">{eventFacts.name}</p>

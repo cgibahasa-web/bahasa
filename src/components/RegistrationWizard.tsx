@@ -46,6 +46,9 @@ export function RegistrationWizard({
   );
   const [memberNames, setMemberNames] = useState("");
   const [agreed, setAgreed] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState<"card" | "local">(
+    "card",
+  );
 
   const isGroup = registrationType === "group";
   const memberNameList = memberNames
@@ -403,6 +406,13 @@ export function RegistrationWizard({
             {eventFacts.currencyNote[locale]}
           </p>
 
+          <div className="mt-4 rounded-lg border border-navy/10 bg-navy/5 p-4 text-left text-xs text-navy/70">
+            <p className="font-semibold text-navy">
+              {t("Kebijakan Pengembalian Dana", "Refund Policy")}
+            </p>
+            <p className="mt-1">{eventFacts.refundPolicy[locale]}</p>
+          </div>
+
           <label className="mt-6 flex items-start gap-2 text-sm text-navy/70">
             <input
               type="checkbox"
@@ -460,6 +470,58 @@ export function RegistrationWizard({
             <span className="font-bold text-brand-red">USD ${totalUsd}</span>
           </p>
 
+          <div className="mt-6 text-left">
+            <p className="text-xs font-semibold uppercase tracking-wide text-navy/50">
+              {t("Pilih Metode Pembayaran", "Select Payment Method")}
+            </p>
+            <div className="mt-2 grid gap-3 sm:grid-cols-2">
+              <button
+                type="button"
+                onClick={() => setPaymentMethod("card")}
+                className={`rounded-lg border p-4 text-left text-sm transition-colors ${
+                  paymentMethod === "card"
+                    ? "border-navy bg-navy/5"
+                    : "border-navy/15 hover:bg-navy/5"
+                }`}
+              >
+                <span className="font-semibold text-navy">
+                  {t(
+                    "Kartu Kredit Internasional",
+                    "International Credit Card",
+                  )}
+                </span>
+                <span className="mt-1 block text-xs text-navy/60">
+                  {t(
+                    "Visa, Mastercard, JCB — diproses via Eximbay",
+                    "Visa, Mastercard, JCB — processed via Eximbay",
+                  )}
+                </span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setPaymentMethod("local")}
+                className={`rounded-lg border p-4 text-left text-sm transition-colors ${
+                  paymentMethod === "local"
+                    ? "border-navy bg-navy/5"
+                    : "border-navy/15 hover:bg-navy/5"
+                }`}
+              >
+                <span className="font-semibold text-navy">
+                  {t(
+                    "Pembayaran Lokal Indonesia",
+                    "Indonesian Local Payment",
+                  )}
+                </span>
+                <span className="mt-1 block text-xs text-navy/60">
+                  {t(
+                    "GoPay, OVO, Virtual Account — diproses via Midtrans",
+                    "GoPay, OVO, Bank Virtual Account — processed via Midtrans",
+                  )}
+                </span>
+              </button>
+            </div>
+          </div>
+
           {paymentConfigured ? (
             <p className="mt-4 text-sm text-navy/70">
               {t(
@@ -471,8 +533,8 @@ export function RegistrationWizard({
             <div className="mt-4 rounded-lg border border-navy/10 bg-navy/5 p-6 text-left text-sm text-navy/70">
               <p>
                 {t(
-                  "Integrasi sistem pembayaran belum aktif — masih menunggu persetujuan PG.",
-                  "Payment system integration is not yet active — it is still pending PG approval.",
+                  `Integrasi pembayaran untuk ${paymentMethod === "card" ? "kartu kredit internasional (Eximbay)" : "pembayaran lokal Indonesia (Midtrans)"} belum aktif — masih menunggu persetujuan PG.`,
+                  `Payment integration for ${paymentMethod === "card" ? "international credit cards (Eximbay)" : "Indonesian local payment (Midtrans)"} is not yet active — it is still pending PG approval.`,
                 )}
               </p>
               <p className="mt-2">{eventFacts.paymentProviderNote[locale]}</p>
