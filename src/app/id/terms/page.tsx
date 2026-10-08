@@ -103,7 +103,7 @@ export default function IdTermsPage() {
             Ketentuan pembatalan dan pengembalian dana diatur secara terpisah
             dalam{" "}
             <Link
-              href="/refund"
+              href="/id/refund"
               className="underline underline-offset-4"
             >
               Kebijakan Pengembalian Dana

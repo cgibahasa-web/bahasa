@@ -7,24 +7,24 @@ export default function NotFound() {
         404
       </p>
       <h1 className="max-w-lg text-2xl font-semibold sm:text-3xl">
-        Halaman tidak ditemukan / Page not found
+        Page not found / Halaman tidak ditemukan
       </h1>
       <p className="max-w-md text-sm text-navy/70 sm:text-base">
-        Halaman yang Anda cari tidak tersedia. / The page you are looking for
-        is not available.
+        The page you are looking for is not available. / Halaman yang Anda
+        cari tidak tersedia.
       </p>
       <div className="mt-2 flex flex-col items-center gap-3 sm:flex-row">
         <Link
           href="/"
           className="rounded-full bg-navy px-8 py-3 text-sm font-semibold text-ivory transition-colors hover:bg-navy/90 sm:text-base"
         >
-          Kembali ke Beranda
+          Back to Home
         </Link>
         <Link
-          href="/en"
+          href="/id"
           className="rounded-full border border-navy/30 px-8 py-3 text-sm font-semibold text-navy transition-colors hover:bg-navy/5 sm:text-base"
         >
-          Back to Home (EN)
+          Kembali ke Beranda (ID)
         </Link>
       </div>
     </main>

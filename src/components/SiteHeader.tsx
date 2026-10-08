@@ -13,7 +13,7 @@ export function SiteHeader({ locale }: { locale: "id" | "en" }) {
   const headerRef = useRef<HTMLElement>(null);
   const otherLocale = locale === "id" ? "en" : "id";
   const localelessPath =
-    locale === "en" ? pathname.replace(/^\/en/, "") : pathname;
+    locale === "id" ? pathname.replace(/^\/id/, "") : pathname;
   const altPath = localePath(otherLocale, localelessPath);
 
   // The root <html> tag is shared by every route, so it can't set the

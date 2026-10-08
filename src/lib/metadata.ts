@@ -34,7 +34,7 @@ export function buildMetadata({
       languages: {
         id: idUrl,
         en: enUrl,
-        "x-default": idUrl,
+        "x-default": enUrl,
       },
     },
     openGraph: {

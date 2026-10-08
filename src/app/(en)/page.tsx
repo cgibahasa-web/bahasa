@@ -102,7 +102,7 @@ export default function EnHomePage() {
 
         <div className="mt-10 flex flex-col items-center gap-3">
           <Link
-            href="/en/registration"
+            href="/registration"
             className="rounded-full bg-gold px-10 py-4 text-base font-bold text-navy-deep shadow-lg shadow-navy-deep/40 transition-colors hover:bg-gold/90 sm:text-lg"
           >
             Register Here
@@ -160,7 +160,7 @@ export default function EnHomePage() {
           </ul>
           <div className="mt-8 text-center">
             <Link
-              href="/en/program"
+              href="/program"
               className="text-sm font-medium text-gold underline underline-offset-4"
             >
               View Full Program
@@ -260,7 +260,7 @@ export default function EnHomePage() {
           </ul>
           <div className="mt-6 text-center">
             <Link
-              href="/en/faq"
+              href="/faq"
               className="text-sm font-medium text-navy underline underline-offset-4"
             >
               View all FAQs
@@ -279,7 +279,7 @@ export default function EnHomePage() {
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
-            href="/en/registration"
+            href="/registration"
             className="rounded-full bg-gold px-8 py-3 text-sm font-semibold text-navy-deep transition-colors hover:bg-gold/90 sm:text-base"
           >
             Register Here

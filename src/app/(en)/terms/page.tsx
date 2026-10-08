@@ -103,7 +103,7 @@ export default function EnTermsPage() {
           </h2>
           <p className="mt-2">
             Cancellation and refund terms are set out separately in the{" "}
-            <Link href="/en/refund" className="underline underline-offset-4">
+            <Link href="/refund" className="underline underline-offset-4">
               Refund Policy
             </Link>
             , which forms an integral part of these terms and conditions.
